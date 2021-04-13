@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass">
+  <Vendor>
+    <Name>C++ Module Vendor</Name>
+  </Vendor>
+  <DataTypes ><DataType><Name GUID="{9c0af363-67df-4054-8d25-e35f780f42e3}">IIOSyncInterface</Name><BaseType GUID="{00000001-0000-0000-e000-000000000064}">ITcUnknown</BaseType><Method><Name>GetInputReadyFlag</Name><ReturnType GUID="{18071995-0000-0000-0000-000000000030}" >BOOL</ReturnType></Method><Method><Name>SetInputReadyFlag</Name></Method><Method><Name>ResetInputReadyFlag</Name></Method><Method><Name>CountInputReadyTimeout</Name></Method><Method><Name>GetOutputReadyFlag</Name><ReturnType GUID="{18071995-0000-0000-0000-000000000030}" >BOOL</ReturnType></Method><Method><Name>SetOutputReadyFlag</Name></Method><Method><Name>ResetOutputReadyFlag</Name></Method><Method><Name>CountOutputReadyTimeout</Name></Method><Hides></Hides></DataType></DataTypes>
+  <Groups>
+    <Group SortOrder="701">
+      <Name>C++</Name>
+      <DisplayName>C++ Modules</DisplayName>
+    </Group>
+  </Groups>
+  <Modules>
+    <Module GUID="{9db963ca-876d-44a3-8341-41d1dbe289f2}" Group="C++">
+      <Name>IOSyncModule</Name>
+      <CLSID ClassFactory="IOSync">{9db963ca-876d-44a3-8341-41d1dbe289f2}</CLSID>
+      <Licenses>
+        <License>
+          <LicenseId>{304D006A-8299-4560-AB79-438534B50288}</LicenseId>
+          <Comment>TC3 C++</Comment>
+        </License>
+      </Licenses>
+      <InitSequence>PSO</InitSequence>
+      <Contexts>
+        <Context>
+          <Id>1</Id>
+        </Context>
+      </Contexts>
+      <Interfaces>
+        <Interface DisableCodeGeneration="true">
+          <Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
+        </Interface>
+        <Interface>
+          <Type GUID="{03000010-0000-0000-E000-000000000064}">ITcCyclic</Type>
+        </Interface>
+        <Interface DisableCodeGeneration="true">
+          <Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
+        </Interface>
+        <Interface DisableCodeGeneration="true">
+          <Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
+        </Interface>
+      </Interfaces>
+      <Parameters>
+        <Parameter HideParameter="true">
+          <Name>TraceLevelMax</Name>
+          <Comment>Controls the amount of log messages.</Comment>
+          <BaseType GUID="{8007ae3b-86bb-40f2-b385-ef87fcc239a4}">TcTraceLevel</BaseType>
+          <PTCID>#x03002103</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter>
+          <Name>DefaultAdsPort</Name>
+          <Comment>ADS port number to be used by the module instance. With value 0xFFFF a port number will be created. Allowed range is 2000-9999.</Comment>
+          <BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+          <Default>
+            <Value>-1</Value>
+          </Default>
+          <PTCID>#x00000001</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter>
+          <Name>ContextAdsPort</Name>
+          <Comment>ADS port number of the task associated with context 1</Comment>
+          <BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+          <PTCID>#x03002090</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter CreateSymbol="true" OnlineParameter="true" DisableCodeGeneration="true">
+          <Name>AdsPort</Name>
+          <Comment>ADS port number actually used by the module instance.</Comment>
+          <BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+          <PTCID>#x00000002</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter CreateSymbol="true" OnlineParameter="true">
+          <Name>Counter</Name>
+          <Comment>Incremented continuously if module instance is in started mode.</Comment>
+          <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          <PTCID>#x00000003</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+      </Parameters>
+      <DataAreas>
+        <DataArea>
+          <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
+          <Name>Inputs</Name>
+          <ContextId>1</ContextId>
+          <Symbol>
+            <Name>Value</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>Status</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>Data</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          </Symbol>
+        </DataArea>
+        <DataArea>
+          <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
+          <Name>Outputs</Name>
+          <ContextId>1</ContextId>
+          <Symbol>
+            <Name>Value</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>Control</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>Data</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          </Symbol>
+        </DataArea>
+      </DataAreas>
+      <InterfacePointers>
+        <InterfacePointer>
+          <PTCID>#x03002060</PTCID>
+          <Name>CyclicCaller</Name>
+          <Type GUID="{0300001e-0000-0000-e000-000000000064}">ITcCyclicCaller</Type>
+        </InterfacePointer><InterfacePointer><PTCID>#x00000004</PTCID><Name>RTime</Name><Type GUID="{02000010-0000-0000-e000-000000000064}">ITcRTime</Type><ContextId>1</ContextId></InterfacePointer><InterfacePointer><PTCID>#x00000005</PTCID><Name>IOSyncIntrf1</Name><Type GUID="{9c0af363-67df-4054-8d25-e35f780f42e3}">IIOSyncInterface</Type><ContextId>1</ContextId></InterfacePointer><InterfacePointer><PTCID>#x00000006</PTCID><Name>IOSyncIntrf2</Name><Type GUID="{9c0af363-67df-4054-8d25-e35f780f42e3}">IIOSyncInterface</Type><ContextId>1</ContextId></InterfacePointer><InterfacePointer><PTCID>#x00000007</PTCID><Name>IOSyncIntrf3</Name><Type GUID="{9c0af363-67df-4054-8d25-e35f780f42e3}">IIOSyncInterface</Type><ContextId>1</ContextId></InterfacePointer><InterfacePointer><PTCID>#x00000008</PTCID><Name>IOSyncIntrf4</Name><Type GUID="{9c0af363-67df-4054-8d25-e35f780f42e3}">IIOSyncInterface</Type><ContextId>1</ContextId></InterfacePointer><InterfacePointer><PTCID>#x00000009</PTCID><Name>IOSyncIntrf5</Name><Type GUID="{9c0af363-67df-4054-8d25-e35f780f42e3}">IIOSyncInterface</Type><ContextId>1</ContextId></InterfacePointer><InterfacePointer><PTCID>#x0000000A</PTCID><Name>IOSyncIntrf6</Name><Type GUID="{9c0af363-67df-4054-8d25-e35f780f42e3}">IIOSyncInterface</Type><ContextId>1</ContextId></InterfacePointer><InterfacePointer><PTCID>#x0000000B</PTCID><Name>IOSyncIntrf7</Name><Type GUID="{9c0af363-67df-4054-8d25-e35f780f42e3}">IIOSyncInterface</Type><ContextId>1</ContextId></InterfacePointer><InterfacePointer><PTCID>#x0000000C</PTCID><Name>IOSyncIntrf8</Name><Type GUID="{9c0af363-67df-4054-8d25-e35f780f42e3}">IIOSyncInterface</Type><ContextId>1</ContextId></InterfacePointer><InterfacePointer><PTCID>#x0000000D</PTCID><Name>IOSyncIntrf9</Name><Type GUID="{9c0af363-67df-4054-8d25-e35f780f42e3}">IIOSyncInterface</Type><ContextId>1</ContextId></InterfacePointer><InterfacePointer><PTCID>#x0000000E</PTCID><Name>IOSyncIntrf10</Name><Type GUID="{9c0af363-67df-4054-8d25-e35f780f42e3}">IIOSyncInterface</Type><ContextId>1</ContextId></InterfacePointer>
+      </InterfacePointers>
+      <DataPointers />
+      <Deployment />
+    </Module>
+  </Modules>
+  <Library>
+    <Name>IOSync</Name>
+    <Version>0.0.0.1</Version>
+  </Library>
+</TcModuleClass>

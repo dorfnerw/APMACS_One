@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass">
+  <Vendor>
+    <Name>C++ Module Vendor</Name>
+  </Vendor>
+  <DataTypes ><DataType><Name GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Name><BitSize X64="64">32</BitSize><BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType><Method><Name>GetInputReadyFlag</Name><ReturnType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</ReturnType><ReturnBitSize>8</ReturnBitSize></Method><Method><Name>SetInputReadyFlag</Name><ReturnBitSize X64="64">32</ReturnBitSize></Method><Method><Name>ResetInputReadyFlag</Name><ReturnBitSize X64="64">32</ReturnBitSize></Method><Method><Name>CountInputReadyTimeout</Name><ReturnBitSize X64="64">32</ReturnBitSize></Method><Method><Name>GetOutputReadyFlag</Name><ReturnType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</ReturnType><ReturnBitSize>8</ReturnBitSize></Method><Method><Name>SetOutputReadyFlag</Name><ReturnBitSize X64="64">32</ReturnBitSize></Method><Method><Name>ResetOutputReadyFlag</Name><ReturnBitSize X64="64">32</ReturnBitSize></Method><Method><Name>CountOutputReadyTimeout</Name><ReturnBitSize X64="64">32</ReturnBitSize></Method><Hides><Hide GUID="{AF156F6A-8FA2-46FF-8085-0D8D1A3500A3}" /><Hide GUID="{D5BCA7BB-EBD4-469E-BBD2-DE109CADE892}" /><Hide GUID="{85CDCA06-82D1-4A2C-BD0F-AE1704C1D563}" /></Hides></DataType></DataTypes>
+  <Groups>
+    <Group SortOrder="701">
+      <Name>C++</Name>
+      <DisplayName>C++ Modules</DisplayName>
+    </Group>
+  </Groups>
+  <Modules>
+    <Module GUID="{eef5ccea-3262-477d-aeec-6f91a08bcbed}" Group="C++">
+      <Name>RollFeedModule</Name>
+      <CLSID ClassFactory="RollFeed">{eef5ccea-3262-477d-aeec-6f91a08bcbed}</CLSID>
+      <Licenses>
+        <License>
+          <LicenseId>{304D006A-8299-4560-AB79-438534B50288}</LicenseId>
+          <Comment>TC3 C++</Comment>
+        </License>
+      </Licenses>
+      <InitSequence>PSO</InitSequence>
+      <Contexts>
+        <Context>
+          <Id>1</Id>
+        </Context>
+      </Contexts>
+      <Interfaces>
+        <Interface DisableCodeGeneration="true">
+          <Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
+        </Interface>
+        <Interface>
+          <Type GUID="{03000010-0000-0000-E000-000000000064}">ITcCyclic</Type>
+        </Interface>
+        <Interface DisableCodeGeneration="true">
+          <Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
+        </Interface>
+        <Interface DisableCodeGeneration="true">
+          <Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
+        </Interface><Interface><Type GUID="{03000025-0000-0000-e000-000000000064}">ITcPostCyclic</Type></Interface><Interface><Type GUID="{9c0af363-67df-4054-8d25-e35f780f42e3}">IIOSyncInterface</Type></Interface>
+      </Interfaces>
+      <Parameters>
+        <Parameter HideParameter="true">
+          <Name>TraceLevelMax</Name>
+          <Comment>Controls the amount of log messages.</Comment>
+          <BaseType GUID="{8007ae3b-86bb-40f2-b385-ef87fcc239a4}">TcTraceLevel</BaseType>
+          <PTCID>#x03002103</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter>
+          <Name>DefaultAdsPort</Name>
+          <Comment>ADS port number to be used by the module instance. With value 0xFFFF a port number will be created. Allowed range is 2000-9999.</Comment>
+          <BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+          <Default>
+            <Value>-1</Value>
+          </Default>
+          <PTCID>#x00000001</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter>
+          <Name>ContextAdsPort</Name>
+          <Comment>ADS port number of the task associated with context 1</Comment>
+          <BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+          <PTCID>#x03002090</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter CreateSymbol="true" OnlineParameter="true" DisableCodeGeneration="true">
+          <Name>AdsPort</Name>
+          <Comment>ADS port number actually used by the module instance.</Comment>
+          <BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+          <PTCID>#x00000002</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter CreateSymbol="true" OnlineParameter="true">
+          <Name>Counter</Name>
+          <Comment>Incremented continuously if module instance is in started mode.</Comment>
+          <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          <PTCID>#x00000003</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+      </Parameters>
+      <DataAreas>
+        <DataArea>
+          <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
+          <Name>Inputs</Name>
+          <ContextId>1</ContextId>
+          <Symbol>
+            <Name>Value</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>Status</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>Data</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          </Symbol>
+        </DataArea>
+        <DataArea>
+          <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
+          <Name>Outputs</Name>
+          <ContextId>1</ContextId>
+          <Symbol>
+            <Name>Value</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>Control</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>Data</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          </Symbol>
+        </DataArea>
+      </DataAreas>
+      <InterfacePointers>
+        <InterfacePointer>
+          <PTCID>#x03002060</PTCID>
+          <Name>CyclicCaller</Name>
+          <Type GUID="{0300001e-0000-0000-e000-000000000064}">ITcCyclicCaller</Type>
+        </InterfacePointer><InterfacePointer><PTCID>#x00000004</PTCID><Name>PostCyclicCaller</Name><Type GUID="{03000026-0000-0000-e000-000000000064}">ITcPostCyclicCaller</Type><ContextId>1</ContextId></InterfacePointer>
+      </InterfacePointers>
+      <DataPointers />
+      <Deployment />
+    </Module>
+  </Modules>
+  <Library>
+    <Name>RollFeed</Name>
+    <Version>0.0.0.1</Version>
+  </Library>
+</TcModuleClass>
