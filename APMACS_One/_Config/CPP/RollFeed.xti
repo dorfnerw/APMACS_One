@@ -47,7 +47,7 @@
 		</DataType>
 	</DataTypes>
 	<Project GUID="{7ABC6E27-AF71-40A4-8064-0790DAE3D151}" Name="RollFeed" PrjFilePath="..\..\RollFeed\RollFeed.vcxproj" TmcFilePath="..\..\RollFeed\RollFeed.tmc">
-		<Instance Id="#x01010020" KeepUnrestoredLinks="2" ClassFactoryId="C++ Module Vendor|RollFeed|0.0.0.1">
+		<Instance Id="#x01010020" KeepUnrestoredLinks="1" ClassFactoryId="C++ Module Vendor|RollFeed|0.0.0.1">
 			<Name>RollFeed_A</Name>
 			<TmcDesc GUID="{EEF5CCEA-3262-477D-AEEC-6F91A08BCBED}">
 				<Name>RollFeedModule</Name>
@@ -230,7 +230,7 @@
 				</InterfacePointerValues>
 			</TmcDesc>
 		</Instance>
-		<Instance Id="#x01010030" KeepUnrestoredLinks="2" ClassFactoryId="C++ Module Vendor|RollFeed|0.0.0.1">
+		<Instance Id="#x01010030" KeepUnrestoredLinks="1" ClassFactoryId="C++ Module Vendor|RollFeed|0.0.0.1">
 			<Name>RollFeed_B</Name>
 			<TmcDesc GUID="{EEF5CCEA-3262-477D-AEEC-6F91A08BCBED}">
 				<Name>RollFeedModule</Name>
