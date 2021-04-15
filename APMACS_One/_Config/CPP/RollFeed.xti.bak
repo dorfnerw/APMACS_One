@@ -47,7 +47,7 @@
 		</DataType>
 	</DataTypes>
 	<Project GUID="{7ABC6E27-AF71-40A4-8064-0790DAE3D151}" Name="RollFeed" PrjFilePath="..\..\RollFeed\RollFeed.vcxproj" TmcFilePath="..\..\RollFeed\RollFeed.tmc">
-		<Instance Id="#x01010020" KeepUnrestoredLinks="2" ClassFactoryId="C++ Module Vendor|RollFeed|0.0.0.1">
+		<Instance Id="#x01010020" KeepUnrestoredLinks="1" ClassFactoryId="C++ Module Vendor|RollFeed|0.1.0.1">
 			<Name>RollFeed_A</Name>
 			<TmcDesc GUID="{EEF5CCEA-3262-477D-AEEC-6F91A08BCBED}">
 				<Name>RollFeedModule</Name>
@@ -132,6 +132,13 @@
 						<PTCID>#x00000003</PTCID>
 						<ContextId>1</ContextId>
 					</Parameter>
+					<Parameter>
+						<Name>MyContextId</Name>
+						<BitSize>16</BitSize>
+						<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+						<PTCID>#x00000005</PTCID>
+						<ContextId>1</ContextId>
+					</Parameter>
 				</Parameters>
 				<DataAreas>
 					<DataArea>
@@ -162,7 +169,7 @@
 						<AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
 						<Name>Outputs</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>12</ByteSize>
+						<ByteSize>20</ByteSize>
 						<Symbol>
 							<Name>Value</Name>
 							<BitSize>32</BitSize>
@@ -180,6 +187,18 @@
 							<BitSize>32</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
 							<BitOffs>64</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>InputReadyTimeoutCount</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>96</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>OutputReadyTimeoutCount</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>128</BitOffs>
 						</Symbol>
 					</DataArea>
 				</DataAreas>
@@ -217,6 +236,10 @@
 						<Name>Counter</Name>
 						<Value>0</Value>
 					</Value>
+					<Value>
+						<Name>MyContextId</Name>
+						<Value>2</Value>
+					</Value>
 				</ParameterValues>
 				<InterfacePointerValues>
 					<Value>
@@ -230,7 +253,7 @@
 				</InterfacePointerValues>
 			</TmcDesc>
 		</Instance>
-		<Instance Id="#x01010030" KeepUnrestoredLinks="2" ClassFactoryId="C++ Module Vendor|RollFeed|0.0.0.1">
+		<Instance Id="#x01010030" KeepUnrestoredLinks="1" ClassFactoryId="C++ Module Vendor|RollFeed|0.1.0.1">
 			<Name>RollFeed_B</Name>
 			<TmcDesc GUID="{EEF5CCEA-3262-477D-AEEC-6F91A08BCBED}">
 				<Name>RollFeedModule</Name>
@@ -248,7 +271,7 @@
 							<OTCID>#x02010040</OTCID>
 						</ManualConfig>
 						<Priority>3</Priority>
-						<CycleTime>125000</CycleTime>
+						<CycleTime>250000</CycleTime>
 					</Context>
 				</Contexts>
 				<Interfaces>
@@ -315,6 +338,13 @@
 						<PTCID>#x00000003</PTCID>
 						<ContextId>1</ContextId>
 					</Parameter>
+					<Parameter>
+						<Name>MyContextId</Name>
+						<BitSize>16</BitSize>
+						<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+						<PTCID>#x00000005</PTCID>
+						<ContextId>1</ContextId>
+					</Parameter>
 				</Parameters>
 				<DataAreas>
 					<DataArea>
@@ -345,7 +375,7 @@
 						<AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
 						<Name>Outputs</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>12</ByteSize>
+						<ByteSize>20</ByteSize>
 						<Symbol>
 							<Name>Value</Name>
 							<BitSize>32</BitSize>
@@ -363,6 +393,18 @@
 							<BitSize>32</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
 							<BitOffs>64</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>InputReadyTimeoutCount</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>96</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>OutputReadyTimeoutCount</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>128</BitOffs>
 						</Symbol>
 					</DataArea>
 				</DataAreas>
@@ -399,6 +441,216 @@
 					<Value>
 						<Name>Counter</Name>
 						<Value>0</Value>
+					</Value>
+					<Value>
+						<Name>MyContextId</Name>
+						<Value>3</Value>
+					</Value>
+				</ParameterValues>
+				<InterfacePointerValues>
+					<Value>
+						<Name>CyclicCaller</Name>
+						<OTCID>#x02010040</OTCID>
+					</Value>
+					<Value>
+						<Name>PostCyclicCaller</Name>
+						<OTCID>#x02010040</OTCID>
+					</Value>
+				</InterfacePointerValues>
+			</TmcDesc>
+		</Instance>
+		<Instance Id="#x01010040" KeepUnrestoredLinks="2" ClassFactoryId="C++ Module Vendor|RollFeed|0.1.0.1">
+			<Name>RollFeed_C</Name>
+			<TmcDesc GUID="{EEF5CCEA-3262-477D-AEEC-6F91A08BCBED}">
+				<Name>RollFeedModule</Name>
+				<CLSID ClassFactory="RollFeed">{EEF5CCEA-3262-477D-AEEC-6F91A08BCBED}</CLSID>
+				<Licenses>
+					<License>
+						<LicenseId>{304D006A-8299-4560-AB79-438534B50288}</LicenseId>
+					</License>
+				</Licenses>
+				<InitSequence>PSO</InitSequence>
+				<Contexts>
+					<Context>
+						<Id>1</Id>
+						<ManualConfig>
+							<OTCID>#x02010040</OTCID>
+						</ManualConfig>
+						<Priority>3</Priority>
+						<CycleTime>250000</CycleTime>
+					</Context>
+				</Contexts>
+				<Interfaces>
+					<Interface DisableCodeGeneration="true">
+						<Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
+					</Interface>
+					<Interface>
+						<Type GUID="{03000010-0000-0000-E000-000000000064}">ITcCyclic</Type>
+					</Interface>
+					<Interface DisableCodeGeneration="true">
+						<Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
+					</Interface>
+					<Interface DisableCodeGeneration="true">
+						<Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
+					</Interface>
+					<Interface>
+						<Type GUID="{03000025-0000-0000-E000-000000000064}">ITcPostCyclic</Type>
+					</Interface>
+					<Interface>
+						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
+					</Interface>
+				</Interfaces>
+				<Parameters>
+					<Parameter HideParameter="true">
+						<Name>TraceLevelMax</Name>
+						<Comment><![CDATA[Controls the amount of log messages.]]></Comment>
+						<BitSize>32</BitSize>
+						<BaseType GUID="{8007AE3B-86BB-40F2-B385-EF87FCC239A4}">TcTraceLevel</BaseType>
+						<PTCID>#x03002103</PTCID>
+						<ContextId>1</ContextId>
+					</Parameter>
+					<Parameter>
+						<Name>DefaultAdsPort</Name>
+						<Comment><![CDATA[ADS port number to be used by the module instance. With value 0xFFFF a port number will be created. Allowed range is 2000-9999.]]></Comment>
+						<BitSize>16</BitSize>
+						<BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+						<Default>
+							<Value>-1</Value>
+						</Default>
+						<PTCID>#x00000001</PTCID>
+						<ContextId>1</ContextId>
+					</Parameter>
+					<Parameter>
+						<Name>ContextAdsPort</Name>
+						<Comment><![CDATA[ADS port number of the task associated with context 1]]></Comment>
+						<BitSize>16</BitSize>
+						<BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+						<PTCID>#x03002090</PTCID>
+						<ContextId>1</ContextId>
+					</Parameter>
+					<Parameter OnlineParameter="true" DisableCodeGeneration="true" CreateSymbol="true">
+						<Name>AdsPort</Name>
+						<Comment><![CDATA[ADS port number actually used by the module instance.]]></Comment>
+						<BitSize>16</BitSize>
+						<BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+						<PTCID>#x00000002</PTCID>
+						<ContextId>1</ContextId>
+					</Parameter>
+					<Parameter OnlineParameter="true" CreateSymbol="true">
+						<Name>Counter</Name>
+						<Comment><![CDATA[Incremented continuously if module instance is in started mode.]]></Comment>
+						<BitSize>32</BitSize>
+						<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+						<PTCID>#x00000003</PTCID>
+						<ContextId>1</ContextId>
+					</Parameter>
+					<Parameter>
+						<Name>MyContextId</Name>
+						<BitSize>16</BitSize>
+						<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+						<PTCID>#x00000005</PTCID>
+						<ContextId>1</ContextId>
+					</Parameter>
+				</Parameters>
+				<DataAreas>
+					<DataArea>
+						<AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
+						<Name>Inputs</Name>
+						<ContextId>1</ContextId>
+						<ByteSize>12</ByteSize>
+						<Symbol>
+							<Name>Value</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>0</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>Status</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>32</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>Data</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>64</BitOffs>
+						</Symbol>
+					</DataArea>
+					<DataArea>
+						<AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
+						<Name>Outputs</Name>
+						<ContextId>1</ContextId>
+						<ByteSize>20</ByteSize>
+						<Symbol>
+							<Name>Value</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>0</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>Control</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>32</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>Data</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>64</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>InputReadyTimeoutCount</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>96</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>OutputReadyTimeoutCount</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>128</BitOffs>
+						</Symbol>
+					</DataArea>
+				</DataAreas>
+				<InterfacePointers>
+					<InterfacePointer>
+						<PTCID>#x03002060</PTCID>
+						<Name>CyclicCaller</Name>
+						<Type GUID="{0300001E-0000-0000-E000-000000000064}">ITcCyclicCaller</Type>
+					</InterfacePointer>
+					<InterfacePointer>
+						<PTCID>#x00000004</PTCID>
+						<Name>PostCyclicCaller</Name>
+						<Type GUID="{03000026-0000-0000-E000-000000000064}">ITcPostCyclicCaller</Type>
+						<ContextId>1</ContextId>
+					</InterfacePointer>
+				</InterfacePointers>
+				<ParameterValues>
+					<Value>
+						<Name>TraceLevelMax</Name>
+						<EnumText>tlAlways</EnumText>
+					</Value>
+					<Value>
+						<Name>DefaultAdsPort</Name>
+						<Value>65535</Value>
+					</Value>
+					<Value>
+						<Name>ContextAdsPort</Name>
+						<Value>352</Value>
+					</Value>
+					<Value>
+						<Name>AdsPort</Name>
+						<Value>0</Value>
+					</Value>
+					<Value>
+						<Name>Counter</Name>
+						<Value>0</Value>
+					</Value>
+					<Value>
+						<Name>MyContextId</Name>
+						<Value>4</Value>
 					</Value>
 				</ParameterValues>
 				<InterfacePointerValues>

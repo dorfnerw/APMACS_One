@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.10" ClassName="CNestedCppProjDef">
 	<Project GUID="{CE61030E-EC12-4308-B464-3862EDD83166}" Name="IOSync" PrjFilePath="..\..\IOSync\IOSync.vcxproj" TmcFilePath="..\..\IOSync\IOSync.tmc">
-		<Instance Id="#x01010010" KeepUnrestoredLinks="2" ClassFactoryId="C++ Module Vendor|IOSync|0.0.0.1">
+		<Instance Id="#x01010010" KeepUnrestoredLinks="1" ClassFactoryId="C++ Module Vendor|IOSync|0.1.0.1">
 			<Name>__FILENAME__</Name>
 			<TmcDesc GUID="{9DB963CA-876D-44A3-8341-41D1DBE289F2}">
 				<Name>IOSyncModule</Name>
@@ -78,6 +78,13 @@
 						<BitSize>32</BitSize>
 						<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
 						<PTCID>#x00000003</PTCID>
+						<ContextId>1</ContextId>
+					</Parameter>
+					<Parameter>
+						<Name>MyContextId</Name>
+						<BitSize>16</BitSize>
+						<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+						<PTCID>#x0000000f</PTCID>
 						<ContextId>1</ContextId>
 					</Parameter>
 				</Parameters>
@@ -224,6 +231,10 @@
 					<Value>
 						<Name>Counter</Name>
 						<Value>0</Value>
+					</Value>
+					<Value>
+						<Name>MyContextId</Name>
+						<Value>1</Value>
 					</Value>
 				</ParameterValues>
 				<InterfacePointerValues>

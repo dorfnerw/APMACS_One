@@ -78,7 +78,7 @@
           <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
           <PTCID>#x00000003</PTCID>
           <ContextId>1</ContextId>
-        </Parameter>
+        </Parameter><Parameter><Name>MyContextId</Name><BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType><PTCID>#x0000000F</PTCID><ContextId>1</ContextId></Parameter>
       </Parameters>
       <DataAreas>
         <DataArea>
@@ -129,6 +129,6 @@
   </Modules>
   <Library>
     <Name>IOSync</Name>
-    <Version>0.0.0.1</Version>
+    <Version>0.1.0.1</Version>
   </Library>
 </TcModuleClass>

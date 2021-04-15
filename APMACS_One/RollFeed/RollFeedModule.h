@@ -88,6 +88,7 @@ protected:
 	WORD m_DefaultAdsPort;
 	WORD m_ContextAdsPort;
 	ULONG m_Counter;
+	SHORT m_MyContextId;
 	RollFeedModuleInputs m_Inputs;
 	RollFeedModuleOutputs m_Outputs;
 	ITcCyclicCallerInfoPtr m_spCyclicCaller;
@@ -102,8 +103,9 @@ protected:
 	ULONG  m_ReadByOidAndPid;
 
 	//#@@# LTW
-	int m_ContextID;
+//	int m_ContextID;
 
+	bool scheduleFlag;
 	bool inputReadyFlag;
 	bool outputReadyFlag;
 	int inputReadyTimeout;

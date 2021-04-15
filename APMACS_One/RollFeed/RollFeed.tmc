@@ -78,7 +78,7 @@
           <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
           <PTCID>#x00000003</PTCID>
           <ContextId>1</ContextId>
-        </Parameter>
+        </Parameter><Parameter><Name>MyContextId</Name><BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType><PTCID>#x00000005</PTCID><ContextId>1</ContextId></Parameter>
       </Parameters>
       <DataAreas>
         <DataArea>
@@ -113,7 +113,7 @@
           <Symbol>
             <Name>Data</Name>
             <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-          </Symbol>
+          </Symbol><Symbol><Name>InputReadyTimeoutCount</Name><BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType></Symbol><Symbol><Name>OutputReadyTimeoutCount</Name><BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType></Symbol>
         </DataArea>
       </DataAreas>
       <InterfacePointers>
@@ -129,6 +129,6 @@
   </Modules>
   <Library>
     <Name>RollFeed</Name>
-    <Version>0.0.0.1</Version>
+    <Version>0.1.0.1</Version>
   </Library>
 </TcModuleClass>

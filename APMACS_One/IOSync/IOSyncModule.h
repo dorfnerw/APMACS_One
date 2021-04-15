@@ -73,6 +73,7 @@ protected:
 	WORD m_DefaultAdsPort;
 	WORD m_ContextAdsPort;
 	ULONG m_Counter;
+	SHORT m_MyContextId;
 	IOSyncModuleInputs m_Inputs;
 	IOSyncModuleOutputs m_Outputs;
 	ITcCyclicCallerInfoPtr m_spCyclicCaller;
@@ -103,6 +104,7 @@ protected:
 	void ResetIOSyncIntrfPointers();
 
 	void SetInputReadyFlags();
+	void ResetInputReadyFlags();
 	void ResetOutputReadyFlags();
 	bool IsOutputReady();
 	void CountOutputReadyTimeouts();
