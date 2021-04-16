@@ -105,11 +105,14 @@ protected:
 	//#@@# LTW
 //	int m_ContextID;
 
-	bool scheduleFlag;
+//	bool scheduleFlag;
+
 	bool inputReadyFlag;
 	bool outputReadyFlag;
 	int inputReadyTimeout;
 	int outputReadyTimeout;
+
+	int modcount;
 
 	CTcLogMark m_log;
 

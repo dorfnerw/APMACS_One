@@ -19,7 +19,7 @@
 							<OTCID>#x02010020</OTCID>
 						</ManualConfig>
 						<Priority>1</Priority>
-						<CycleTime>125000</CycleTime>
+						<CycleTime>250000</CycleTime>
 					</Context>
 				</Contexts>
 				<Interfaces>
@@ -34,6 +34,9 @@
 					</Interface>
 					<Interface DisableCodeGeneration="true">
 						<Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
+					</Interface>
+					<Interface>
+						<Type GUID="{03000025-0000-0000-E000-000000000064}">ITcPostCyclic</Type>
 					</Interface>
 				</Interfaces>
 				<Parameters>
@@ -137,6 +140,18 @@
 							<BitOffs>64</BitOffs>
 						</Symbol>
 					</DataArea>
+					<DataArea>
+						<AreaNo AreaType="Standard">3</AreaNo>
+						<Name>Debug</Name>
+						<ContextId>1</ContextId>
+						<ByteSize>2</ByteSize>
+						<Symbol CreateSymbol="true">
+							<Name>DelayUsec</Name>
+							<BitSize>16</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+							<BitOffs>0</BitOffs>
+						</Symbol>
+					</DataArea>
 				</DataAreas>
 				<InterfacePointers>
 					<InterfacePointer>
@@ -208,6 +223,12 @@
 						<PTCID>#x0000000e</PTCID>
 						<Name>IOSyncIntrf10</Name>
 						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
+						<ContextId>1</ContextId>
+					</InterfacePointer>
+					<InterfacePointer>
+						<PTCID>#x00000010</PTCID>
+						<Name>PostCyclicCaller</Name>
+						<Type GUID="{03000026-0000-0000-E000-000000000064}">ITcPostCyclicCaller</Type>
 						<ContextId>1</ContextId>
 					</InterfacePointer>
 				</InterfacePointers>
@@ -284,6 +305,10 @@
 					</Value>
 					<Value>
 						<Name>IOSyncIntrf10</Name>
+						<OTCID>#x00000000</OTCID>
+					</Value>
+					<Value>
+						<Name>PostCyclicCaller</Name>
 						<OTCID>#x00000000</OTCID>
 					</Value>
 				</InterfacePointerValues>

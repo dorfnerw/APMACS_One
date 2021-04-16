@@ -145,7 +145,7 @@
 						<AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
 						<Name>Inputs</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>12</ByteSize>
+						<ByteSize>13</ByteSize>
 						<Symbol>
 							<Name>Value</Name>
 							<BitSize>32</BitSize>
@@ -164,12 +164,18 @@
 							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
 							<BitOffs>64</BitOffs>
 						</Symbol>
+						<Symbol>
+							<Name>TestInputBit0</Name>
+							<BitSize>1</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+							<BitOffs>96</BitOffs>
+						</Symbol>
 					</DataArea>
 					<DataArea>
 						<AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
 						<Name>Outputs</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>20</ByteSize>
+						<ByteSize>21</ByteSize>
 						<Symbol>
 							<Name>Value</Name>
 							<BitSize>32</BitSize>
@@ -199,6 +205,12 @@
 							<BitSize>32</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
 							<BitOffs>128</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>TestOutputBit0</Name>
+							<BitSize>1</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+							<BitOffs>160</BitOffs>
 						</Symbol>
 					</DataArea>
 				</DataAreas>
@@ -351,7 +363,7 @@
 						<AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
 						<Name>Inputs</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>12</ByteSize>
+						<ByteSize>13</ByteSize>
 						<Symbol>
 							<Name>Value</Name>
 							<BitSize>32</BitSize>
@@ -370,12 +382,18 @@
 							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
 							<BitOffs>64</BitOffs>
 						</Symbol>
+						<Symbol>
+							<Name>TestInputBit0</Name>
+							<BitSize>1</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+							<BitOffs>96</BitOffs>
+						</Symbol>
 					</DataArea>
 					<DataArea>
 						<AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
 						<Name>Outputs</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>20</ByteSize>
+						<ByteSize>21</ByteSize>
 						<Symbol>
 							<Name>Value</Name>
 							<BitSize>32</BitSize>
@@ -405,6 +423,12 @@
 							<BitSize>32</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
 							<BitOffs>128</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>TestOutputBit0</Name>
+							<BitSize>1</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+							<BitOffs>160</BitOffs>
 						</Symbol>
 					</DataArea>
 				</DataAreas>
@@ -557,7 +581,7 @@
 						<AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
 						<Name>Inputs</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>12</ByteSize>
+						<ByteSize>13</ByteSize>
 						<Symbol>
 							<Name>Value</Name>
 							<BitSize>32</BitSize>
@@ -576,12 +600,18 @@
 							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
 							<BitOffs>64</BitOffs>
 						</Symbol>
+						<Symbol>
+							<Name>TestInputBit0</Name>
+							<BitSize>1</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+							<BitOffs>96</BitOffs>
+						</Symbol>
 					</DataArea>
 					<DataArea>
 						<AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
 						<Name>Outputs</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>20</ByteSize>
+						<ByteSize>21</ByteSize>
 						<Symbol>
 							<Name>Value</Name>
 							<BitSize>32</BitSize>
@@ -611,6 +641,12 @@
 							<BitSize>32</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
 							<BitOffs>128</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>TestOutputBit0</Name>
+							<BitSize>1</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+							<BitOffs>160</BitOffs>
 						</Symbol>
 					</DataArea>
 				</DataAreas>

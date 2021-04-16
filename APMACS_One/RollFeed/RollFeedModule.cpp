@@ -467,7 +467,7 @@ HRESULT CRollFeedModule::PostCyclicUpdate(ITcTask* ipTask, ITcUnknown* ipCaller,
 	HRESULT hr = E_NOTIMPL;
 	bool result = false;
 
-	scheduleFlag = true;
+	//scheduleFlag = true;
 	//ResetInputReadyFlag();				//-- NOTE: 0-0-0-1 reaset input ready flag from prev cycle. input ready timeout frequently incremented when task is running twice slower than IO sync.
 
 	//-- Wait till IO sync module indicates that input read is completed. ---
@@ -477,12 +477,47 @@ HRESULT CRollFeedModule::PostCyclicUpdate(ITcTask* ipTask, ITcUnknown* ipCaller,
 		//-- Reset input ready flag for this cycle  ---
 		ResetInputReadyFlag();			
 
+		//-- This test is for Feed A only
+		if (m_MyContextId == 2)
+		{
+			//if ((m_Outputs.TestOutputBit0 && m_Inputs.TestInputBit0) || (!m_Outputs.TestOutputBit0 && !m_Inputs.TestInputBit0))
+			//{
+			//	m_log.LogMark(4, 4);
+			//	m_Outputs.Value++;
 
+
+			//}
+
+			if (m_Inputs.TestInputBit0) m_log.LogMark(4, 4);
+
+		}
 
 
 		//-- This is Logic execution -----
 		m_log.LogStart(2, 2);
 		DelayUsec(30);							//-- 30 usec 
+		
+		//-- This test is for Feed A only
+		if (m_MyContextId == 2)
+		{
+			if ((modcount % 100) == 0)
+			{
+				m_Outputs.TestOutputBit0 = !m_Outputs.TestOutputBit0;		//-- Test bit 0
+				
+			}
+
+			if (m_Outputs.TestOutputBit0) m_log.LogMark(3, 3);
+
+			modcount++;
+
+
+
+
+
+		}
+
+
+
 		m_log.LogStop(2, 2);
 		//-------------------------------
 
@@ -500,7 +535,7 @@ HRESULT CRollFeedModule::PostCyclicUpdate(ITcTask* ipTask, ITcUnknown* ipCaller,
 		CountInputReadyTimeout();
 	}
 
-	scheduleFlag = false;
+	//scheduleFlag = false;
 
 	return hr;
 }
@@ -620,7 +655,8 @@ bool CRollFeedModule::GetInputReadyFlag()
 
 void CRollFeedModule::SetInputReadyFlag()
 {
-	if(scheduleFlag) inputReadyFlag = true;
+	//if(scheduleFlag) inputReadyFlag = true;
+	inputReadyFlag = true;
 }
 
 void CRollFeedModule::ResetInputReadyFlag()

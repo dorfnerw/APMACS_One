@@ -35,6 +35,9 @@
 					<Interface DisableCodeGeneration="true">
 						<Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
 					</Interface>
+					<Interface>
+						<Type GUID="{03000025-0000-0000-E000-000000000064}">ITcPostCyclic</Type>
+					</Interface>
 				</Interfaces>
 				<Parameters>
 					<Parameter HideParameter="true">
@@ -210,6 +213,12 @@
 						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
 						<ContextId>1</ContextId>
 					</InterfacePointer>
+					<InterfacePointer>
+						<PTCID>#x00000010</PTCID>
+						<Name>PostCyclicCaller</Name>
+						<Type GUID="{03000026-0000-0000-E000-000000000064}">ITcPostCyclicCaller</Type>
+						<ContextId>1</ContextId>
+					</InterfacePointer>
 				</InterfacePointers>
 				<ParameterValues>
 					<Value>
@@ -256,7 +265,7 @@
 					</Value>
 					<Value>
 						<Name>IOSyncIntrf3</Name>
-						<OTCID>#x00000000</OTCID>
+						<OTCID>#x01010040</OTCID>
 					</Value>
 					<Value>
 						<Name>IOSyncIntrf4</Name>
@@ -284,6 +293,10 @@
 					</Value>
 					<Value>
 						<Name>IOSyncIntrf10</Name>
+						<OTCID>#x00000000</OTCID>
+					</Value>
+					<Value>
+						<Name>PostCyclicCaller</Name>
 						<OTCID>#x00000000</OTCID>
 					</Value>
 				</InterfacePointerValues>

@@ -96,7 +96,7 @@
           <Symbol>
             <Name>Data</Name>
             <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-          </Symbol>
+          </Symbol><Symbol><Name>TestInputBit0</Name><BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType></Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
@@ -113,7 +113,7 @@
           <Symbol>
             <Name>Data</Name>
             <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-          </Symbol><Symbol><Name>InputReadyTimeoutCount</Name><BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType></Symbol><Symbol><Name>OutputReadyTimeoutCount</Name><BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType></Symbol>
+          </Symbol><Symbol><Name>InputReadyTimeoutCount</Name><BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType></Symbol><Symbol><Name>OutputReadyTimeoutCount</Name><BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType></Symbol><Symbol><Name>TestOutputBit0</Name><BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType></Symbol>
         </DataArea>
       </DataAreas>
       <InterfacePointers>
