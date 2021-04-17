@@ -175,7 +175,7 @@
 						<AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
 						<Name>Outputs</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>21</ByteSize>
+						<ByteSize>13</ByteSize>
 						<Symbol>
 							<Name>Value</Name>
 							<BitSize>32</BitSize>
@@ -195,34 +195,34 @@
 							<BitOffs>64</BitOffs>
 						</Symbol>
 						<Symbol>
-							<Name>InputReadyTimeoutCount</Name>
-							<BitSize>32</BitSize>
-							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-							<BitOffs>96</BitOffs>
-						</Symbol>
-						<Symbol>
-							<Name>OutputReadyTimeoutCount</Name>
-							<BitSize>32</BitSize>
-							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-							<BitOffs>128</BitOffs>
-						</Symbol>
-						<Symbol>
 							<Name>TestOutputBit0</Name>
 							<BitSize>1</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
-							<BitOffs>160</BitOffs>
+							<BitOffs>96</BitOffs>
 						</Symbol>
 					</DataArea>
 					<DataArea>
 						<AreaNo AreaType="Standard">3</AreaNo>
 						<Name>Debug</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>2</ByteSize>
+						<ByteSize>10</ByteSize>
 						<Symbol>
 							<Name>ExeTimeUsec</Name>
 							<BitSize>16</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
 							<BitOffs>0</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>InputReadyTimeoutCount</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>16</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>OutputReadyTimeoutCount</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>48</BitOffs>
 						</Symbol>
 					</DataArea>
 				</DataAreas>
@@ -405,7 +405,7 @@
 						<AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
 						<Name>Outputs</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>21</ByteSize>
+						<ByteSize>13</ByteSize>
 						<Symbol>
 							<Name>Value</Name>
 							<BitSize>32</BitSize>
@@ -425,34 +425,34 @@
 							<BitOffs>64</BitOffs>
 						</Symbol>
 						<Symbol>
-							<Name>InputReadyTimeoutCount</Name>
-							<BitSize>32</BitSize>
-							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-							<BitOffs>96</BitOffs>
-						</Symbol>
-						<Symbol>
-							<Name>OutputReadyTimeoutCount</Name>
-							<BitSize>32</BitSize>
-							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-							<BitOffs>128</BitOffs>
-						</Symbol>
-						<Symbol>
 							<Name>TestOutputBit0</Name>
 							<BitSize>1</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
-							<BitOffs>160</BitOffs>
+							<BitOffs>96</BitOffs>
 						</Symbol>
 					</DataArea>
 					<DataArea>
 						<AreaNo AreaType="Standard">3</AreaNo>
 						<Name>Debug</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>2</ByteSize>
+						<ByteSize>10</ByteSize>
 						<Symbol>
 							<Name>ExeTimeUsec</Name>
 							<BitSize>16</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
 							<BitOffs>0</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>InputReadyTimeoutCount</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>16</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>OutputReadyTimeoutCount</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>48</BitOffs>
 						</Symbol>
 					</DataArea>
 				</DataAreas>
@@ -635,7 +635,7 @@
 						<AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
 						<Name>Outputs</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>21</ByteSize>
+						<ByteSize>13</ByteSize>
 						<Symbol>
 							<Name>Value</Name>
 							<BitSize>32</BitSize>
@@ -655,34 +655,34 @@
 							<BitOffs>64</BitOffs>
 						</Symbol>
 						<Symbol>
-							<Name>InputReadyTimeoutCount</Name>
-							<BitSize>32</BitSize>
-							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-							<BitOffs>96</BitOffs>
-						</Symbol>
-						<Symbol>
-							<Name>OutputReadyTimeoutCount</Name>
-							<BitSize>32</BitSize>
-							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-							<BitOffs>128</BitOffs>
-						</Symbol>
-						<Symbol>
 							<Name>TestOutputBit0</Name>
 							<BitSize>1</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
-							<BitOffs>160</BitOffs>
+							<BitOffs>96</BitOffs>
 						</Symbol>
 					</DataArea>
 					<DataArea>
 						<AreaNo AreaType="Standard">3</AreaNo>
 						<Name>Debug</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>2</ByteSize>
+						<ByteSize>10</ByteSize>
 						<Symbol>
 							<Name>ExeTimeUsec</Name>
 							<BitSize>16</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
 							<BitOffs>0</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>InputReadyTimeoutCount</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>16</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>OutputReadyTimeoutCount</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>48</BitOffs>
 						</Symbol>
 					</DataArea>
 				</DataAreas>
@@ -865,7 +865,7 @@
 						<AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
 						<Name>Outputs</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>21</ByteSize>
+						<ByteSize>13</ByteSize>
 						<Symbol>
 							<Name>Value</Name>
 							<BitSize>32</BitSize>
@@ -885,34 +885,34 @@
 							<BitOffs>64</BitOffs>
 						</Symbol>
 						<Symbol>
-							<Name>InputReadyTimeoutCount</Name>
-							<BitSize>32</BitSize>
-							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-							<BitOffs>96</BitOffs>
-						</Symbol>
-						<Symbol>
-							<Name>OutputReadyTimeoutCount</Name>
-							<BitSize>32</BitSize>
-							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-							<BitOffs>128</BitOffs>
-						</Symbol>
-						<Symbol>
 							<Name>TestOutputBit0</Name>
 							<BitSize>1</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
-							<BitOffs>160</BitOffs>
+							<BitOffs>96</BitOffs>
 						</Symbol>
 					</DataArea>
 					<DataArea>
 						<AreaNo AreaType="Standard">3</AreaNo>
 						<Name>Debug</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>2</ByteSize>
+						<ByteSize>10</ByteSize>
 						<Symbol>
 							<Name>ExeTimeUsec</Name>
 							<BitSize>16</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
 							<BitOffs>0</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>InputReadyTimeoutCount</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>16</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>OutputReadyTimeoutCount</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>48</BitOffs>
 						</Symbol>
 					</DataArea>
 				</DataAreas>

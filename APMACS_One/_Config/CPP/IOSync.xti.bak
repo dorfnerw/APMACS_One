@@ -152,7 +152,7 @@
 							<BitOffs>0</BitOffs>
 						</Symbol>
 						<Symbol>
-							<Name>MaxWaitUSec</Name>
+							<Name>MaxWaitUsec</Name>
 							<BitSize>16</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
 							<BitOffs>16</BitOffs>
@@ -471,7 +471,7 @@
 							<BitOffs>0</BitOffs>
 						</Symbol>
 						<Symbol>
-							<Name>MaxWaitUSec</Name>
+							<Name>MaxWaitUsec</Name>
 							<BitSize>16</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
 							<BitOffs>16</BitOffs>
