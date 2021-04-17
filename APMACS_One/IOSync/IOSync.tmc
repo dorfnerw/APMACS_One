@@ -114,7 +114,7 @@
             <Name>Data</Name>
             <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
           </Symbol>
-        </DataArea><DataArea><AreaNo AreaType="Standard">3</AreaNo><Name>Debug</Name><ContextId>1</ContextId><Symbol CreateSymbol="true"><Name>DelayUsec</Name><BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType></Symbol></DataArea>
+        </DataArea><DataArea><AreaNo AreaType="Standard">3</AreaNo><Name>Debug</Name><ContextId>1</ContextId><Symbol CreateSymbol="true"><Name>DelayUsec</Name><BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType></Symbol><Symbol><Name>MaxWaitUsec</Name><BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType></Symbol></DataArea>
       </DataAreas>
       <InterfacePointers>
         <InterfacePointer>
