@@ -1,7 +1,125 @@
 <?xml version="1.0"?>
 <TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.10" ClassName="CNestedCppProjDef">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{7EBE6026-0379-47C3-97B9-EC238F447164}">IIOSyncInterface</Name>
+			<BitSize X64="64">32</BitSize>
+			<BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType>
+			<Method>
+				<Name>AddModuleToIOSync</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000006}">INT</ReturnType>
+				<ReturnBitSize>16</ReturnBitSize>
+			</Method>
+			<Method>
+				<Name>RemoveModuleFromIOSync</Name>
+				<ReturnBitSize X64="64">32</ReturnBitSize>
+				<Parameter>
+					<Name>index</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>GetInputReadyFlag</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</ReturnType>
+				<ReturnBitSize>8</ReturnBitSize>
+				<Parameter>
+					<Name>index</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>SetInputReadyFlag</Name>
+				<ReturnBitSize X64="64">32</ReturnBitSize>
+				<Parameter>
+					<Name>index</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>ResetInputReadyFlag</Name>
+				<ReturnBitSize X64="64">32</ReturnBitSize>
+				<Parameter>
+					<Name>index</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>GetOutputReadyFlag</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</ReturnType>
+				<ReturnBitSize>8</ReturnBitSize>
+				<Parameter>
+					<Name>index</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>SetOutputReadyFlag</Name>
+				<ReturnBitSize X64="64">32</ReturnBitSize>
+				<Parameter>
+					<Name>index</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>ResetOutputReadyFlag</Name>
+				<ReturnBitSize X64="64">32</ReturnBitSize>
+				<Parameter>
+					<Name>index</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>GetInputReadyTimeout</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000009}">DINT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>index</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>CountInputReadyTimeout</Name>
+				<ReturnBitSize X64="64">32</ReturnBitSize>
+				<Parameter>
+					<Name>index</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>CountOutputReadyTimeout</Name>
+				<ReturnBitSize X64="64">32</ReturnBitSize>
+				<Parameter>
+					<Name>index</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>GetOutputReadyTimeout</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000009}">DINT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>index</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+			</Method>
+			<Hides>
+				<Hide GUID="{7F5EF25F-C969-422B-9792-F9EE09FA6A8A}"/>
+			</Hides>
+		</DataType>
+	</DataTypes>
 	<Project GUID="{CE61030E-EC12-4308-B464-3862EDD83166}" Name="IOSync" PrjFilePath="..\..\IOSync\IOSync.vcxproj" TmcFilePath="..\..\IOSync\IOSync.tmc">
-		<Instance Id="#x01010010" KeepUnrestoredLinks="1" ClassFactoryId="C++ Module Vendor|IOSync|0.1.0.1">
+		<Instance Id="#x01010010" KeepUnrestoredLinks="1" ClassFactoryId="C++ Module Vendor|IOSync|0.2.0.1">
 			<Name>IOSync_1</Name>
 			<TmcDesc GUID="{9DB963CA-876D-44A3-8341-41D1DBE289F2}">
 				<Name>IOSyncModule</Name>
@@ -37,6 +155,9 @@
 					</Interface>
 					<Interface>
 						<Type GUID="{03000025-0000-0000-E000-000000000064}">ITcPostCyclic</Type>
+					</Interface>
+					<Interface>
+						<Type GUID="{7EBE6026-0379-47C3-97B9-EC238F447164}">IIOSyncInterface</Type>
 					</Interface>
 				</Interfaces>
 				<Parameters>
@@ -144,7 +265,7 @@
 						<AreaNo AreaType="Standard">3</AreaNo>
 						<Name>Debug</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>4</ByteSize>
+						<ByteSize>6</ByteSize>
 						<Symbol CreateSymbol="true">
 							<Name>DelayUsec</Name>
 							<BitSize>16</BitSize>
@@ -156,6 +277,12 @@
 							<BitSize>16</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
 							<BitOffs>16</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>NumSyncModule</Name>
+							<BitSize>16</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+							<BitOffs>32</BitOffs>
 						</Symbol>
 					</DataArea>
 				</DataAreas>
@@ -169,66 +296,6 @@
 						<PTCID>#x00000004</PTCID>
 						<Name>RTime</Name>
 						<Type GUID="{02000010-0000-0000-E000-000000000064}">ITcRTime</Type>
-						<ContextId>1</ContextId>
-					</InterfacePointer>
-					<InterfacePointer>
-						<PTCID>#x00000005</PTCID>
-						<Name>IOSyncIntrf1</Name>
-						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
-						<ContextId>1</ContextId>
-					</InterfacePointer>
-					<InterfacePointer>
-						<PTCID>#x00000006</PTCID>
-						<Name>IOSyncIntrf2</Name>
-						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
-						<ContextId>1</ContextId>
-					</InterfacePointer>
-					<InterfacePointer>
-						<PTCID>#x00000007</PTCID>
-						<Name>IOSyncIntrf3</Name>
-						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
-						<ContextId>1</ContextId>
-					</InterfacePointer>
-					<InterfacePointer>
-						<PTCID>#x00000008</PTCID>
-						<Name>IOSyncIntrf4</Name>
-						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
-						<ContextId>1</ContextId>
-					</InterfacePointer>
-					<InterfacePointer>
-						<PTCID>#x00000009</PTCID>
-						<Name>IOSyncIntrf5</Name>
-						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
-						<ContextId>1</ContextId>
-					</InterfacePointer>
-					<InterfacePointer>
-						<PTCID>#x0000000a</PTCID>
-						<Name>IOSyncIntrf6</Name>
-						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
-						<ContextId>1</ContextId>
-					</InterfacePointer>
-					<InterfacePointer>
-						<PTCID>#x0000000b</PTCID>
-						<Name>IOSyncIntrf7</Name>
-						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
-						<ContextId>1</ContextId>
-					</InterfacePointer>
-					<InterfacePointer>
-						<PTCID>#x0000000c</PTCID>
-						<Name>IOSyncIntrf8</Name>
-						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
-						<ContextId>1</ContextId>
-					</InterfacePointer>
-					<InterfacePointer>
-						<PTCID>#x0000000d</PTCID>
-						<Name>IOSyncIntrf9</Name>
-						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
-						<ContextId>1</ContextId>
-					</InterfacePointer>
-					<InterfacePointer>
-						<PTCID>#x0000000e</PTCID>
-						<Name>IOSyncIntrf10</Name>
-						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
 						<ContextId>1</ContextId>
 					</InterfacePointer>
 					<InterfacePointer>
@@ -274,53 +341,13 @@
 						<OTCID>#x00000000</OTCID>
 					</Value>
 					<Value>
-						<Name>IOSyncIntrf1</Name>
-						<OTCID>#x01010060</OTCID>
-					</Value>
-					<Value>
-						<Name>IOSyncIntrf2</Name>
-						<OTCID>#x00000000</OTCID>
-					</Value>
-					<Value>
-						<Name>IOSyncIntrf3</Name>
-						<OTCID>#x00000000</OTCID>
-					</Value>
-					<Value>
-						<Name>IOSyncIntrf4</Name>
-						<OTCID>#x00000000</OTCID>
-					</Value>
-					<Value>
-						<Name>IOSyncIntrf5</Name>
-						<OTCID>#x00000000</OTCID>
-					</Value>
-					<Value>
-						<Name>IOSyncIntrf6</Name>
-						<OTCID>#x00000000</OTCID>
-					</Value>
-					<Value>
-						<Name>IOSyncIntrf7</Name>
-						<OTCID>#x00000000</OTCID>
-					</Value>
-					<Value>
-						<Name>IOSyncIntrf8</Name>
-						<OTCID>#x00000000</OTCID>
-					</Value>
-					<Value>
-						<Name>IOSyncIntrf9</Name>
-						<OTCID>#x00000000</OTCID>
-					</Value>
-					<Value>
-						<Name>IOSyncIntrf10</Name>
-						<OTCID>#x00000000</OTCID>
-					</Value>
-					<Value>
 						<Name>PostCyclicCaller</Name>
 						<OTCID>#x02010020</OTCID>
 					</Value>
 				</InterfacePointerValues>
 			</TmcDesc>
 		</Instance>
-		<Instance Id="#x01010050" KeepUnrestoredLinks="2" ClassFactoryId="C++ Module Vendor|IOSync|0.1.0.1">
+		<Instance Id="#x01010050" KeepUnrestoredLinks="2" ClassFactoryId="C++ Module Vendor|IOSync|0.2.0.1">
 			<Name>IOSync_2</Name>
 			<TmcDesc GUID="{9DB963CA-876D-44A3-8341-41D1DBE289F2}">
 				<Name>IOSyncModule</Name>
@@ -356,6 +383,9 @@
 					</Interface>
 					<Interface>
 						<Type GUID="{03000025-0000-0000-E000-000000000064}">ITcPostCyclic</Type>
+					</Interface>
+					<Interface>
+						<Type GUID="{7EBE6026-0379-47C3-97B9-EC238F447164}">IIOSyncInterface</Type>
 					</Interface>
 				</Interfaces>
 				<Parameters>
@@ -463,7 +493,7 @@
 						<AreaNo AreaType="Standard">3</AreaNo>
 						<Name>Debug</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>4</ByteSize>
+						<ByteSize>6</ByteSize>
 						<Symbol CreateSymbol="true">
 							<Name>DelayUsec</Name>
 							<BitSize>16</BitSize>
@@ -475,6 +505,12 @@
 							<BitSize>16</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
 							<BitOffs>16</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>NumSyncModule</Name>
+							<BitSize>16</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+							<BitOffs>32</BitOffs>
 						</Symbol>
 					</DataArea>
 				</DataAreas>
@@ -488,66 +524,6 @@
 						<PTCID>#x00000004</PTCID>
 						<Name>RTime</Name>
 						<Type GUID="{02000010-0000-0000-E000-000000000064}">ITcRTime</Type>
-						<ContextId>1</ContextId>
-					</InterfacePointer>
-					<InterfacePointer>
-						<PTCID>#x00000005</PTCID>
-						<Name>IOSyncIntrf1</Name>
-						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
-						<ContextId>1</ContextId>
-					</InterfacePointer>
-					<InterfacePointer>
-						<PTCID>#x00000006</PTCID>
-						<Name>IOSyncIntrf2</Name>
-						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
-						<ContextId>1</ContextId>
-					</InterfacePointer>
-					<InterfacePointer>
-						<PTCID>#x00000007</PTCID>
-						<Name>IOSyncIntrf3</Name>
-						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
-						<ContextId>1</ContextId>
-					</InterfacePointer>
-					<InterfacePointer>
-						<PTCID>#x00000008</PTCID>
-						<Name>IOSyncIntrf4</Name>
-						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
-						<ContextId>1</ContextId>
-					</InterfacePointer>
-					<InterfacePointer>
-						<PTCID>#x00000009</PTCID>
-						<Name>IOSyncIntrf5</Name>
-						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
-						<ContextId>1</ContextId>
-					</InterfacePointer>
-					<InterfacePointer>
-						<PTCID>#x0000000a</PTCID>
-						<Name>IOSyncIntrf6</Name>
-						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
-						<ContextId>1</ContextId>
-					</InterfacePointer>
-					<InterfacePointer>
-						<PTCID>#x0000000b</PTCID>
-						<Name>IOSyncIntrf7</Name>
-						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
-						<ContextId>1</ContextId>
-					</InterfacePointer>
-					<InterfacePointer>
-						<PTCID>#x0000000c</PTCID>
-						<Name>IOSyncIntrf8</Name>
-						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
-						<ContextId>1</ContextId>
-					</InterfacePointer>
-					<InterfacePointer>
-						<PTCID>#x0000000d</PTCID>
-						<Name>IOSyncIntrf9</Name>
-						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
-						<ContextId>1</ContextId>
-					</InterfacePointer>
-					<InterfacePointer>
-						<PTCID>#x0000000e</PTCID>
-						<Name>IOSyncIntrf10</Name>
-						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
 						<ContextId>1</ContextId>
 					</InterfacePointer>
 					<InterfacePointer>
@@ -590,46 +566,6 @@
 					</Value>
 					<Value>
 						<Name>RTime</Name>
-						<OTCID>#x00000000</OTCID>
-					</Value>
-					<Value>
-						<Name>IOSyncIntrf1</Name>
-						<OTCID>#x01010020</OTCID>
-					</Value>
-					<Value>
-						<Name>IOSyncIntrf2</Name>
-						<OTCID>#x01010030</OTCID>
-					</Value>
-					<Value>
-						<Name>IOSyncIntrf3</Name>
-						<OTCID>#x01010040</OTCID>
-					</Value>
-					<Value>
-						<Name>IOSyncIntrf4</Name>
-						<OTCID>#x00000000</OTCID>
-					</Value>
-					<Value>
-						<Name>IOSyncIntrf5</Name>
-						<OTCID>#x00000000</OTCID>
-					</Value>
-					<Value>
-						<Name>IOSyncIntrf6</Name>
-						<OTCID>#x00000000</OTCID>
-					</Value>
-					<Value>
-						<Name>IOSyncIntrf7</Name>
-						<OTCID>#x00000000</OTCID>
-					</Value>
-					<Value>
-						<Name>IOSyncIntrf8</Name>
-						<OTCID>#x00000000</OTCID>
-					</Value>
-					<Value>
-						<Name>IOSyncIntrf9</Name>
-						<OTCID>#x00000000</OTCID>
-					</Value>
-					<Value>
-						<Name>IOSyncIntrf10</Name>
 						<OTCID>#x00000000</OTCID>
 					</Value>
 					<Value>

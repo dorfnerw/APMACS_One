@@ -1,53 +1,7 @@
 <?xml version="1.0"?>
 <TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.10" ClassName="CNestedCppProjDef">
-	<DataTypes>
-		<DataType>
-			<Name GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Name>
-			<BitSize X64="64">32</BitSize>
-			<BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType>
-			<Method>
-				<Name>GetInputReadyFlag</Name>
-				<ReturnType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</ReturnType>
-				<ReturnBitSize>8</ReturnBitSize>
-			</Method>
-			<Method>
-				<Name>SetInputReadyFlag</Name>
-				<ReturnBitSize X64="64">32</ReturnBitSize>
-			</Method>
-			<Method>
-				<Name>ResetInputReadyFlag</Name>
-				<ReturnBitSize X64="64">32</ReturnBitSize>
-			</Method>
-			<Method>
-				<Name>CountInputReadyTimeout</Name>
-				<ReturnBitSize X64="64">32</ReturnBitSize>
-			</Method>
-			<Method>
-				<Name>GetOutputReadyFlag</Name>
-				<ReturnType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</ReturnType>
-				<ReturnBitSize>8</ReturnBitSize>
-			</Method>
-			<Method>
-				<Name>SetOutputReadyFlag</Name>
-				<ReturnBitSize X64="64">32</ReturnBitSize>
-			</Method>
-			<Method>
-				<Name>ResetOutputReadyFlag</Name>
-				<ReturnBitSize X64="64">32</ReturnBitSize>
-			</Method>
-			<Method>
-				<Name>CountOutputReadyTimeout</Name>
-				<ReturnBitSize X64="64">32</ReturnBitSize>
-			</Method>
-			<Hides>
-				<Hide GUID="{AF156F6A-8FA2-46FF-8085-0D8D1A3500A3}"/>
-				<Hide GUID="{D5BCA7BB-EBD4-469E-BBD2-DE109CADE892}"/>
-				<Hide GUID="{85CDCA06-82D1-4A2C-BD0F-AE1704C1D563}"/>
-			</Hides>
-		</DataType>
-	</DataTypes>
 	<Project GUID="{7ABC6E27-AF71-40A4-8064-0790DAE3D151}" Name="RollFeed" PrjFilePath="..\..\RollFeed\RollFeed.vcxproj" TmcFilePath="..\..\RollFeed\RollFeed.tmc">
-		<Instance Id="#x01010020" KeepUnrestoredLinks="1" ClassFactoryId="C++ Module Vendor|RollFeed|0.1.0.1">
+		<Instance Id="#x01010020" KeepUnrestoredLinks="1" ClassFactoryId="C++ Module Vendor|RollFeed|0.2.0.1">
 			<Name>RollFeed_A</Name>
 			<TmcDesc GUID="{EEF5CCEA-3262-477D-AEEC-6F91A08BCBED}">
 				<Name>RollFeedModule</Name>
@@ -83,9 +37,6 @@
 					</Interface>
 					<Interface>
 						<Type GUID="{03000025-0000-0000-E000-000000000064}">ITcPostCyclic</Type>
-					</Interface>
-					<Interface>
-						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
 					</Interface>
 				</Interfaces>
 				<Parameters>
@@ -236,6 +187,12 @@
 						<PTCID>#x00000004</PTCID>
 						<Name>PostCyclicCaller</Name>
 						<Type GUID="{03000026-0000-0000-E000-000000000064}">ITcPostCyclicCaller</Type>
+						<ContextId>1</ContextId>
+					</InterfacePointer>
+					<InterfacePointer>
+						<PTCID>#x00000006</PTCID>
+						<Name>IOSyncIntrf1</Name>
+						<Type GUID="{7EBE6026-0379-47C3-97B9-EC238F447164}">IIOSyncInterface</Type>
 						<ContextId>1</ContextId>
 					</InterfacePointer>
 				</InterfacePointers>
@@ -274,10 +231,14 @@
 						<Name>PostCyclicCaller</Name>
 						<OTCID>#x02010040</OTCID>
 					</Value>
+					<Value>
+						<Name>IOSyncIntrf1</Name>
+						<OTCID>#x00000000</OTCID>
+					</Value>
 				</InterfacePointerValues>
 			</TmcDesc>
 		</Instance>
-		<Instance Id="#x01010030" KeepUnrestoredLinks="1" ClassFactoryId="C++ Module Vendor|RollFeed|0.1.0.1">
+		<Instance Id="#x01010030" KeepUnrestoredLinks="1" ClassFactoryId="C++ Module Vendor|RollFeed|0.2.0.1">
 			<Name>RollFeed_B</Name>
 			<TmcDesc GUID="{EEF5CCEA-3262-477D-AEEC-6F91A08BCBED}">
 				<Name>RollFeedModule</Name>
@@ -313,9 +274,6 @@
 					</Interface>
 					<Interface>
 						<Type GUID="{03000025-0000-0000-E000-000000000064}">ITcPostCyclic</Type>
-					</Interface>
-					<Interface>
-						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
 					</Interface>
 				</Interfaces>
 				<Parameters>
@@ -466,6 +424,12 @@
 						<PTCID>#x00000004</PTCID>
 						<Name>PostCyclicCaller</Name>
 						<Type GUID="{03000026-0000-0000-E000-000000000064}">ITcPostCyclicCaller</Type>
+						<ContextId>1</ContextId>
+					</InterfacePointer>
+					<InterfacePointer>
+						<PTCID>#x00000006</PTCID>
+						<Name>IOSyncIntrf1</Name>
+						<Type GUID="{7EBE6026-0379-47C3-97B9-EC238F447164}">IIOSyncInterface</Type>
 						<ContextId>1</ContextId>
 					</InterfacePointer>
 				</InterfacePointers>
@@ -504,10 +468,14 @@
 						<Name>PostCyclicCaller</Name>
 						<OTCID>#x02010040</OTCID>
 					</Value>
+					<Value>
+						<Name>IOSyncIntrf1</Name>
+						<OTCID>#x00000000</OTCID>
+					</Value>
 				</InterfacePointerValues>
 			</TmcDesc>
 		</Instance>
-		<Instance Id="#x01010040" KeepUnrestoredLinks="2" ClassFactoryId="C++ Module Vendor|RollFeed|0.1.0.1">
+		<Instance Id="#x01010040" KeepUnrestoredLinks="2" ClassFactoryId="C++ Module Vendor|RollFeed|0.2.0.1">
 			<Name>LSC</Name>
 			<TmcDesc GUID="{EEF5CCEA-3262-477D-AEEC-6F91A08BCBED}">
 				<Name>RollFeedModule</Name>
@@ -543,9 +511,6 @@
 					</Interface>
 					<Interface>
 						<Type GUID="{03000025-0000-0000-E000-000000000064}">ITcPostCyclic</Type>
-					</Interface>
-					<Interface>
-						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
 					</Interface>
 				</Interfaces>
 				<Parameters>
@@ -696,6 +661,12 @@
 						<PTCID>#x00000004</PTCID>
 						<Name>PostCyclicCaller</Name>
 						<Type GUID="{03000026-0000-0000-E000-000000000064}">ITcPostCyclicCaller</Type>
+						<ContextId>1</ContextId>
+					</InterfacePointer>
+					<InterfacePointer>
+						<PTCID>#x00000006</PTCID>
+						<Name>IOSyncIntrf1</Name>
+						<Type GUID="{7EBE6026-0379-47C3-97B9-EC238F447164}">IIOSyncInterface</Type>
 						<ContextId>1</ContextId>
 					</InterfacePointer>
 				</InterfacePointers>
@@ -734,10 +705,14 @@
 						<Name>PostCyclicCaller</Name>
 						<OTCID>#x02010040</OTCID>
 					</Value>
+					<Value>
+						<Name>IOSyncIntrf1</Name>
+						<OTCID>#x00000000</OTCID>
+					</Value>
 				</InterfacePointerValues>
 			</TmcDesc>
 		</Instance>
-		<Instance Id="#x01010060" KeepUnrestoredLinks="2" ClassFactoryId="C++ Module Vendor|RollFeed|0.1.0.1">
+		<Instance Id="#x01010060" KeepUnrestoredLinks="2" ClassFactoryId="C++ Module Vendor|RollFeed|0.2.0.1">
 			<Name>PressPosModule</Name>
 			<TmcDesc GUID="{EEF5CCEA-3262-477D-AEEC-6F91A08BCBED}">
 				<Name>RollFeedModule</Name>
@@ -773,9 +748,6 @@
 					</Interface>
 					<Interface>
 						<Type GUID="{03000025-0000-0000-E000-000000000064}">ITcPostCyclic</Type>
-					</Interface>
-					<Interface>
-						<Type GUID="{9C0AF363-67DF-4054-8D25-E35F780F42E3}">IIOSyncInterface</Type>
 					</Interface>
 				</Interfaces>
 				<Parameters>
@@ -928,6 +900,12 @@
 						<Type GUID="{03000026-0000-0000-E000-000000000064}">ITcPostCyclicCaller</Type>
 						<ContextId>1</ContextId>
 					</InterfacePointer>
+					<InterfacePointer>
+						<PTCID>#x00000006</PTCID>
+						<Name>IOSyncIntrf1</Name>
+						<Type GUID="{7EBE6026-0379-47C3-97B9-EC238F447164}">IIOSyncInterface</Type>
+						<ContextId>1</ContextId>
+					</InterfacePointer>
 				</InterfacePointers>
 				<ParameterValues>
 					<Value>
@@ -963,6 +941,10 @@
 					<Value>
 						<Name>PostCyclicCaller</Name>
 						<OTCID>#x02010030</OTCID>
+					</Value>
+					<Value>
+						<Name>IOSyncIntrf1</Name>
+						<OTCID>#x00000000</OTCID>
 					</Value>
 				</InterfacePointerValues>
 			</TmcDesc>
