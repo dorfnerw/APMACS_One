@@ -48,6 +48,7 @@
 		<Cpp>
 			<Project File="IOSync.xti"/>
 			<Project File="RollFeed.xti"/>
+			<Project File="PressPosition.xti"/>
 		</Cpp>
 		<Io>
 			<Device Id="3" DevType="111" DevFlags="#x0003" AmsPort="28675" AmsNetId="169.254.214.231.4.1" RemoteName="Device 3 (EtherCAT)">

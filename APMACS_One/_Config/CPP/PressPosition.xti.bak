@@ -1,0 +1,230 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.10" ClassName="CNestedCppProjDef">
+	<Project GUID="{72895D6A-A828-46EA-9F1A-42918936E7AA}" Name="PressPosition" PrjFilePath="PressPosition\PressPosition.vcxproj" TmcFilePath="PressPosition\PressPosition.tmc">
+		<Instance Id="#x01010070" KeepUnrestoredLinks="2" ClassFactoryId="C++ Module Vendor|PressPosition|0.3.0.1">
+			<Name>PressPositionMod</Name>
+			<TmcDesc GUID="{94BC1091-676B-4998-A5B7-96976654CC00}">
+				<Name>PressPosModule</Name>
+				<CLSID ClassFactory="PressPosition">{94BC1091-676B-4998-A5B7-96976654CC00}</CLSID>
+				<Licenses>
+					<License>
+						<LicenseId>{304D006A-8299-4560-AB79-438534B50288}</LicenseId>
+					</License>
+				</Licenses>
+				<InitSequence>PSO</InitSequence>
+				<Contexts>
+					<Context>
+						<Id>1</Id>
+						<ManualConfig>
+							<OTCID>#x02010030</OTCID>
+						</ManualConfig>
+						<Priority>2</Priority>
+						<CycleTime>125000</CycleTime>
+					</Context>
+				</Contexts>
+				<Interfaces>
+					<Interface DisableCodeGeneration="true">
+						<Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
+					</Interface>
+					<Interface>
+						<Type GUID="{03000010-0000-0000-E000-000000000064}">ITcCyclic</Type>
+					</Interface>
+					<Interface DisableCodeGeneration="true">
+						<Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
+					</Interface>
+					<Interface DisableCodeGeneration="true">
+						<Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
+					</Interface>
+					<Interface>
+						<Type GUID="{03000025-0000-0000-E000-000000000064}">ITcPostCyclic</Type>
+					</Interface>
+				</Interfaces>
+				<Parameters>
+					<Parameter HideParameter="true">
+						<Name>TraceLevelMax</Name>
+						<Comment><![CDATA[Controls the amount of log messages.]]></Comment>
+						<BitSize>32</BitSize>
+						<BaseType GUID="{8007AE3B-86BB-40F2-B385-EF87FCC239A4}">TcTraceLevel</BaseType>
+						<PTCID>#x03002103</PTCID>
+						<ContextId>1</ContextId>
+					</Parameter>
+					<Parameter>
+						<Name>DefaultAdsPort</Name>
+						<Comment><![CDATA[ADS port number to be used by the module instance. With value 0xFFFF a port number will be created. Allowed range is 2000-9999.]]></Comment>
+						<BitSize>16</BitSize>
+						<BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+						<Default>
+							<Value>-1</Value>
+						</Default>
+						<PTCID>#x00000001</PTCID>
+						<ContextId>1</ContextId>
+					</Parameter>
+					<Parameter>
+						<Name>ContextAdsPort</Name>
+						<Comment><![CDATA[ADS port number of the task associated with context 1]]></Comment>
+						<BitSize>16</BitSize>
+						<BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+						<PTCID>#x03002090</PTCID>
+						<ContextId>1</ContextId>
+					</Parameter>
+					<Parameter OnlineParameter="true" DisableCodeGeneration="true" CreateSymbol="true">
+						<Name>AdsPort</Name>
+						<Comment><![CDATA[ADS port number actually used by the module instance.]]></Comment>
+						<BitSize>16</BitSize>
+						<BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+						<PTCID>#x00000002</PTCID>
+						<ContextId>1</ContextId>
+					</Parameter>
+					<Parameter OnlineParameter="true" CreateSymbol="true">
+						<Name>Counter</Name>
+						<Comment><![CDATA[Incremented continuously if module instance is in started mode.]]></Comment>
+						<BitSize>32</BitSize>
+						<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+						<PTCID>#x00000003</PTCID>
+						<ContextId>1</ContextId>
+					</Parameter>
+					<Parameter>
+						<Name>MyContextId</Name>
+						<BitSize>16</BitSize>
+						<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+						<PTCID>#x00000006</PTCID>
+						<ContextId>1</ContextId>
+					</Parameter>
+				</Parameters>
+				<DataAreas>
+					<DataArea>
+						<AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
+						<Name>Inputs</Name>
+						<ContextId>1</ContextId>
+						<ByteSize>12</ByteSize>
+						<Symbol>
+							<Name>Value</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>0</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>Status</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>32</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>Data</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>64</BitOffs>
+						</Symbol>
+					</DataArea>
+					<DataArea>
+						<AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
+						<Name>Outputs</Name>
+						<ContextId>1</ContextId>
+						<ByteSize>12</ByteSize>
+						<Symbol>
+							<Name>Value</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>0</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>Control</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>32</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>Data</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>64</BitOffs>
+						</Symbol>
+					</DataArea>
+					<DataArea>
+						<AreaNo AreaType="Standard">3</AreaNo>
+						<Name>Debug</Name>
+						<ContextId>1</ContextId>
+						<ByteSize>10</ByteSize>
+						<Symbol>
+							<Name>ExeTimeUsec</Name>
+							<BitSize>16</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+							<BitOffs>0</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>InputReadyTimeoutCount</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>16</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>OutputReadyTimeoutCount</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>48</BitOffs>
+						</Symbol>
+					</DataArea>
+				</DataAreas>
+				<InterfacePointers>
+					<InterfacePointer>
+						<PTCID>#x03002060</PTCID>
+						<Name>CyclicCaller</Name>
+						<Type GUID="{0300001E-0000-0000-E000-000000000064}">ITcCyclicCaller</Type>
+					</InterfacePointer>
+					<InterfacePointer>
+						<PTCID>#x00000004</PTCID>
+						<Name>PostCyclicCaller</Name>
+						<Type GUID="{03000026-0000-0000-E000-000000000064}">ITcPostCyclicCaller</Type>
+						<ContextId>1</ContextId>
+					</InterfacePointer>
+					<InterfacePointer>
+						<PTCID>#x00000005</PTCID>
+						<Name>IOSyncIntrf1</Name>
+						<Type GUID="{7EBE6026-0379-47C3-97B9-EC238F447164}">IIOSyncInterface</Type>
+						<ContextId>1</ContextId>
+					</InterfacePointer>
+				</InterfacePointers>
+				<ParameterValues>
+					<Value>
+						<Name>TraceLevelMax</Name>
+						<EnumText>tlAlways</EnumText>
+					</Value>
+					<Value>
+						<Name>DefaultAdsPort</Name>
+						<Value>65535</Value>
+					</Value>
+					<Value>
+						<Name>ContextAdsPort</Name>
+						<Value>351</Value>
+					</Value>
+					<Value>
+						<Name>AdsPort</Name>
+						<Value>0</Value>
+					</Value>
+					<Value>
+						<Name>Counter</Name>
+						<Value>0</Value>
+					</Value>
+					<Value>
+						<Name>MyContextId</Name>
+						<Value>3</Value>
+					</Value>
+				</ParameterValues>
+				<InterfacePointerValues>
+					<Value>
+						<Name>CyclicCaller</Name>
+						<OTCID>#x02010030</OTCID>
+					</Value>
+					<Value>
+						<Name>PostCyclicCaller</Name>
+						<OTCID>#x02010030</OTCID>
+					</Value>
+					<Value>
+						<Name>IOSyncIntrf1</Name>
+						<OTCID>#x01010010</OTCID>
+					</Value>
+				</InterfacePointerValues>
+			</TmcDesc>
+		</Instance>
+	</Project>
+</TcSmItem>

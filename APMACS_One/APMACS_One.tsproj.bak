@@ -17,7 +17,7 @@
 				<Task Id="2" Priority="1" CycleTime="1250" AmsPort="350" AdtTasks="true">
 					<Name>IO Sync Task 1</Name>
 				</Task>
-				<Task Id="3" Priority="2" CycleTime="2500" AmsPort="351" Affinity="#x00000004" AdtTasks="true">
+				<Task Id="3" Priority="2" CycleTime="1250" AmsPort="351" Affinity="#x00000004" AdtTasks="true">
 					<Name>Core 2 Task</Name>
 				</Task>
 				<Task Id="4" Priority="3" CycleTime="2500" AmsPort="301" Affinity="#x00000008">
@@ -48,6 +48,7 @@
 		<Cpp>
 			<Project File="IOSync.xti"/>
 			<Project File="RollFeed.xti"/>
+			<Project File="PressPosition.xti"/>
 		</Cpp>
 		<Io>
 			<Device Id="3" DevType="111" DevFlags="#x0003" AmsPort="28675" AmsNetId="169.254.214.231.4.1" RemoteName="Device 3 (EtherCAT)">

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass">
+  <Vendor>
+    <Name>C++ Module Vendor</Name>
+  </Vendor>
+  <DataTypes ><DataType><Name GUID="{7EBE6026-0379-47C3-97B9-EC238F447164}">IIOSyncInterface</Name><BitSize X64="64">32</BitSize><BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType><Method><Name>AddModuleToIOSync</Name><ReturnType GUID="{18071995-0000-0000-0000-000000000006}">INT</ReturnType><ReturnBitSize>16</ReturnBitSize></Method><Method><Name>RemoveModuleFromIOSync</Name><ReturnBitSize X64="64">32</ReturnBitSize><Parameter><Name>index</Name><Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type><BitSize>16</BitSize></Parameter></Method><Method><Name>GetInputReadyFlag</Name><ReturnType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</ReturnType><ReturnBitSize>8</ReturnBitSize><Parameter><Name>index</Name><Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type><BitSize>16</BitSize></Parameter></Method><Method><Name>SetInputReadyFlag</Name><ReturnBitSize X64="64">32</ReturnBitSize><Parameter><Name>index</Name><Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type><BitSize>16</BitSize></Parameter></Method><Method><Name>ResetInputReadyFlag</Name><ReturnBitSize X64="64">32</ReturnBitSize><Parameter><Name>index</Name><Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type><BitSize>16</BitSize></Parameter></Method><Method><Name>GetOutputReadyFlag</Name><ReturnType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</ReturnType><ReturnBitSize>8</ReturnBitSize><Parameter><Name>index</Name><Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type><BitSize>16</BitSize></Parameter></Method><Method><Name>SetOutputReadyFlag</Name><ReturnBitSize X64="64">32</ReturnBitSize><Parameter><Name>index</Name><Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type><BitSize>16</BitSize></Parameter></Method><Method><Name>ResetOutputReadyFlag</Name><ReturnBitSize X64="64">32</ReturnBitSize><Parameter><Name>index</Name><Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type><BitSize>16</BitSize></Parameter></Method><Method><Name>GetInputReadyTimeout</Name><ReturnType GUID="{18071995-0000-0000-0000-000000000009}">DINT</ReturnType><ReturnBitSize>32</ReturnBitSize><Parameter><Name>index</Name><Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type><BitSize>16</BitSize></Parameter></Method><Method><Name>CountInputReadyTimeout</Name><ReturnBitSize X64="64">32</ReturnBitSize><Parameter><Name>index</Name><Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type><BitSize>16</BitSize></Parameter></Method><Method><Name>CountOutputReadyTimeout</Name><ReturnBitSize X64="64">32</ReturnBitSize><Parameter><Name>index</Name><Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type><BitSize>16</BitSize></Parameter></Method><Method><Name>GetOutputReadyTimeout</Name><ReturnType GUID="{18071995-0000-0000-0000-000000000009}">DINT</ReturnType><ReturnBitSize>32</ReturnBitSize><Parameter><Name>index</Name><Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type><BitSize>16</BitSize></Parameter></Method><Hides><Hide GUID="{7F5EF25F-C969-422B-9792-F9EE09FA6A8A}" /></Hides></DataType></DataTypes>
+  <Groups>
+    <Group SortOrder="701">
+      <Name>C++</Name>
+      <DisplayName>C++ Modules</DisplayName>
+    </Group>
+  </Groups>
+  <Modules>
+    <Module GUID="{94bc1091-676b-4998-a5b7-96976654cc00}" Group="C++">
+      <Name>PressPosModule</Name>
+      <CLSID ClassFactory="PressPosition">{94bc1091-676b-4998-a5b7-96976654cc00}</CLSID>
+      <Licenses>
+        <License>
+          <LicenseId>{304D006A-8299-4560-AB79-438534B50288}</LicenseId>
+          <Comment>TC3 C++</Comment>
+        </License>
+      </Licenses>
+      <InitSequence>PSO</InitSequence>
+      <Contexts>
+        <Context>
+          <Id>1</Id>
+        </Context>
+      </Contexts>
+      <Interfaces>
+        <Interface DisableCodeGeneration="true">
+          <Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
+        </Interface>
+        <Interface>
+          <Type GUID="{03000010-0000-0000-E000-000000000064}">ITcCyclic</Type>
+        </Interface>
+        <Interface DisableCodeGeneration="true">
+          <Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
+        </Interface>
+        <Interface DisableCodeGeneration="true">
+          <Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
+        </Interface><Interface><Type GUID="{03000025-0000-0000-e000-000000000064}">ITcPostCyclic</Type></Interface>
+      </Interfaces>
+      <Parameters>
+        <Parameter HideParameter="true">
+          <Name>TraceLevelMax</Name>
+          <Comment>Controls the amount of log messages.</Comment>
+          <BaseType GUID="{8007ae3b-86bb-40f2-b385-ef87fcc239a4}">TcTraceLevel</BaseType>
+          <PTCID>#x03002103</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter>
+          <Name>DefaultAdsPort</Name>
+          <Comment>ADS port number to be used by the module instance. With value 0xFFFF a port number will be created. Allowed range is 2000-9999.</Comment>
+          <BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+          <Default>
+            <Value>-1</Value>
+          </Default>
+          <PTCID>#x00000001</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter>
+          <Name>ContextAdsPort</Name>
+          <Comment>ADS port number of the task associated with context 1</Comment>
+          <BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+          <PTCID>#x03002090</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter CreateSymbol="true" OnlineParameter="true" DisableCodeGeneration="true">
+          <Name>AdsPort</Name>
+          <Comment>ADS port number actually used by the module instance.</Comment>
+          <BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+          <PTCID>#x00000002</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter CreateSymbol="true" OnlineParameter="true">
+          <Name>Counter</Name>
+          <Comment>Incremented continuously if module instance is in started mode.</Comment>
+          <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          <PTCID>#x00000003</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter><Parameter><Name>MyContextId</Name><BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType><PTCID>#x00000006</PTCID><ContextId>1</ContextId></Parameter>
+      </Parameters>
+      <DataAreas>
+        <DataArea>
+          <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
+          <Name>Inputs</Name>
+          <ContextId>1</ContextId>
+          <Symbol>
+            <Name>Value</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>Status</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>Data</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          </Symbol>
+        </DataArea>
+        <DataArea>
+          <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
+          <Name>Outputs</Name>
+          <ContextId>1</ContextId>
+          <Symbol>
+            <Name>Value</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>Control</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>Data</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          </Symbol>
+        </DataArea><DataArea><AreaNo AreaType="Standard">3</AreaNo><Name>Debug</Name><ContextId>1</ContextId><Symbol><Name>ExeTimeUsec</Name><BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType></Symbol><Symbol><Name>InputReadyTimeoutCount</Name><BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType></Symbol><Symbol><Name>OutputReadyTimeoutCount</Name><BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType></Symbol></DataArea>
+      </DataAreas>
+      <InterfacePointers>
+        <InterfacePointer>
+          <PTCID>#x03002060</PTCID>
+          <Name>CyclicCaller</Name>
+          <Type GUID="{0300001e-0000-0000-e000-000000000064}">ITcCyclicCaller</Type>
+        </InterfacePointer><InterfacePointer><PTCID>#x00000004</PTCID><Name>PostCyclicCaller</Name><Type GUID="{03000026-0000-0000-e000-000000000064}">ITcPostCyclicCaller</Type><ContextId>1</ContextId></InterfacePointer><InterfacePointer><PTCID>#x00000005</PTCID><Name>IOSyncIntrf1</Name><Type GUID="{7ebe6026-0379-47c3-97b9-ec238f447164}">IIOSyncInterface</Type><ContextId>1</ContextId></InterfacePointer>
+      </InterfacePointers>
+      <DataPointers />
+      <Deployment />
+    </Module>
+  </Modules>
+  <Library>
+    <Name>PressPosition</Name>
+    <Version>0.3.0.1</Version>
+  </Library>
+</TcModuleClass>
