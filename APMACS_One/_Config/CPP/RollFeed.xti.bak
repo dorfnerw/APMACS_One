@@ -233,7 +233,7 @@
 					</Value>
 					<Value>
 						<Name>IOSyncIntrf1</Name>
-						<OTCID>#x00000000</OTCID>
+						<OTCID>#x01010050</OTCID>
 					</Value>
 				</InterfacePointerValues>
 			</TmcDesc>
@@ -470,7 +470,7 @@
 					</Value>
 					<Value>
 						<Name>IOSyncIntrf1</Name>
-						<OTCID>#x00000000</OTCID>
+						<OTCID>#x01010050</OTCID>
 					</Value>
 				</InterfacePointerValues>
 			</TmcDesc>
@@ -707,7 +707,7 @@
 					</Value>
 					<Value>
 						<Name>IOSyncIntrf1</Name>
-						<OTCID>#x00000000</OTCID>
+						<OTCID>#x01010050</OTCID>
 					</Value>
 				</InterfacePointerValues>
 			</TmcDesc>
@@ -944,7 +944,7 @@
 					</Value>
 					<Value>
 						<Name>IOSyncIntrf1</Name>
-						<OTCID>#x00000000</OTCID>
+						<OTCID>#x01010010</OTCID>
 					</Value>
 				</InterfacePointerValues>
 			</TmcDesc>

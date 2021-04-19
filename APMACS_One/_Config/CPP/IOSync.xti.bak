@@ -265,7 +265,7 @@
 						<AreaNo AreaType="Standard">3</AreaNo>
 						<Name>Debug</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>6</ByteSize>
+						<ByteSize>9</ByteSize>
 						<Symbol CreateSymbol="true">
 							<Name>DelayUsec</Name>
 							<BitSize>16</BitSize>
@@ -283,6 +283,24 @@
 							<BitSize>16</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
 							<BitOffs>32</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>SyncFlag0</Name>
+							<BitSize>8</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+							<BitOffs>48</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>SyncFlag1</Name>
+							<BitSize>8</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+							<BitOffs>56</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>SyncFlag2</Name>
+							<BitSize>8</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+							<BitOffs>64</BitOffs>
 						</Symbol>
 					</DataArea>
 				</DataAreas>
@@ -493,7 +511,7 @@
 						<AreaNo AreaType="Standard">3</AreaNo>
 						<Name>Debug</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>6</ByteSize>
+						<ByteSize>9</ByteSize>
 						<Symbol CreateSymbol="true">
 							<Name>DelayUsec</Name>
 							<BitSize>16</BitSize>
@@ -511,6 +529,24 @@
 							<BitSize>16</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
 							<BitOffs>32</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>SyncFlag0</Name>
+							<BitSize>8</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+							<BitOffs>48</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>SyncFlag1</Name>
+							<BitSize>8</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+							<BitOffs>56</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>SyncFlag2</Name>
+							<BitSize>8</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+							<BitOffs>64</BitOffs>
 						</Symbol>
 					</DataArea>
 				</DataAreas>

@@ -129,6 +129,6 @@
   </Modules>
   <Library>
     <Name>IOSync</Name>
-    <Version>0.2.0.1</Version>
+    <Version>0.3.0.1</Version>
   </Library>
 </TcModuleClass>
