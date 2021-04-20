@@ -44,6 +44,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MotionControlFunctions.h" />
     <ClInclude Include="PressPosModule.h" />
     <ClInclude Include="PressPosModuleAds.h" />
     <ClInclude Include="Resource.h" />
@@ -55,6 +56,7 @@
     <ClInclude Include="PressPositionServices.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="MotionControlFunctions.cpp" />
     <ClCompile Include="PressPosModule.cpp" />
     <ClCompile Include="TcPch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT UM (x86)'">Create</PrecompiledHeader>
@@ -188,6 +190,9 @@
   </PropertyGroup>
   <PropertyGroup Label="TcSign">
     <TcSignTwinCatCertName>Nidec Vamco</TcSignTwinCatCertName>
+  </PropertyGroup>
+  <PropertyGroup Label="TcSign" Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT RT (x64)'">
+    <TcSignTwinCat>true</TcSignTwinCat>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT UM (x86)'">
   </ItemDefinitionGroup>

@@ -5,6 +5,7 @@
 #include "PressPositionInterfaces.h"
 #include "AdsR0.h"
 #include <TcLogMark.h>	// #@@# LTW
+#include "MotionControlFunctions.h"
 
 // parameter ids for TwinCAT module PressPosModule with disabled code generation
 // could be moved to PressPositionServices.h
@@ -81,6 +82,7 @@ protected:
 	PressPosModuleInputs m_Inputs;
 	PressPosModuleOutputs m_Outputs;
 	PressPosModuleDebug m_Debug;
+	PressPosModulePressDriveVariables m_PressDriveVariables;
 	ITcCyclicCallerInfoPtr m_spCyclicCaller;
 	ITcPostCyclicCallerInfoPtr m_spPostCyclicCaller;
 	IIOSyncInterfacePtr m_spIOSyncIntrf1;
@@ -108,4 +110,6 @@ protected:
 	void DelayUsec(int usec);
 	void DelayUsec(void);
 
+	//WPD
+	MotionControlFunctions PressDriveMotionControl;
 };

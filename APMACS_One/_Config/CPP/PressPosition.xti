@@ -1,5 +1,160 @@
 <?xml version="1.0"?>
 <TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.10" ClassName="CNestedCppProjDef">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{484B554E-A552-4431-AC68-AD583306F58F}">DriveInputsStruct</Name>
+			<BitSize>56</BitSize>
+			<SubItem>
+				<Name>StatusWord</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>PositionActualValue</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ModesOfOperationDisplay</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000003}">SINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{AF45A628-633B-4BB9-B395-1EA508E2E9F4}">DriveOutputsStruct</Name>
+			<BitSize>120</BitSize>
+			<SubItem>
+				<Name>ControlWord</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>TargetPosition</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ModesOfOperation</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000003}">SINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>TargetVelocity</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>56</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ProfileAcceleration</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>88</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{DE9E8508-0D64-4C28-90CB-FED16972CF38}">DriveCommandsStruct</Name>
+			<BitSize>128</BitSize>
+			<SubItem>
+				<Name>Enable</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Disable</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Reset</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<Hides>
+				<Hide GUID="{E5AC3776-20D0-4021-8E7D-DBC0A08F4B2F}"/>
+				<Hide GUID="{C55A048E-DEC5-44F0-B7B4-FB7F45ED7C51}"/>
+				<Hide GUID="{8C2127C2-2545-460D-9526-A4FC668A433B}"/>
+				<Hide GUID="{0B70E8D3-03A4-4898-928E-32EDEB2E6CAA}"/>
+				<Hide GUID="{B527CA2F-4588-4A2B-99FC-4F15ECD4BA22}"/>
+				<Hide GUID="{B4B6AE81-B03B-4622-AFEC-6004915B7F6F}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{C5D1F7B8-E309-4699-9630-8D5ADBEFEB73}">MotionCommandsStruct</Name>
+			<BitSize>16</BitSize>
+			<SubItem>
+				<Name>Start</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Stop</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<Hides>
+				<Hide GUID="{4168BC5D-C857-46F6-8281-D8CBDA49C308}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{C08809EA-7BAB-42E0-81CF-5748C4E9663B}">DriveStatusEnum</Name>
+			<BitSize>16</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[UnknownState]]></Text>
+				<Enum>0</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[SwitchOnDisabled]]></Text>
+				<Enum>1</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ReadyToSwitchOn]]></Text>
+				<Enum>2</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[SwitchedOn]]></Text>
+				<Enum>3</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Operational]]></Text>
+				<Enum>4</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[FaultReactionActive]]></Text>
+				<Enum>13</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Fault]]></Text>
+				<Enum>14</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Disabled]]></Text>
+				<Enum>7</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Reset]]></Text>
+				<Enum>8</Enum>
+			</EnumInfo>
+			<Hides>
+				<Hide GUID="{36867280-77AE-4F36-B8AA-D64F43BED060}"/>
+				<Hide GUID="{FDB8F1D7-8C27-4C1C-BE92-752FF5EECC4F}"/>
+				<Hide GUID="{B30C5519-0251-4554-B8C2-01F4CBD15DCD}"/>
+				<Hide GUID="{1D985015-AC36-4139-B72C-8259E30A861F}"/>
+				<Hide GUID="{D5FAE523-8239-4588-A0F2-F3EF8C630014}"/>
+			</Hides>
+		</DataType>
+	</DataTypes>
 	<Project GUID="{72895D6A-A828-46EA-9F1A-42918936E7AA}" Name="PressPosition" PrjFilePath="..\..\PressPosition\PressPosition.vcxproj" TmcFilePath="..\..\PressPosition\PressPosition.tmc">
 		<Instance Id="#x01010070" KeepUnrestoredLinks="2" ClassFactoryId="C++ Module Vendor|PressPosition|0.4.0.1">
 			<Name>PressPositionMod</Name>
@@ -96,7 +251,7 @@
 						<AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
 						<Name>Inputs</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>12</ByteSize>
+						<ByteSize>19</ByteSize>
 						<Symbol>
 							<Name>Value</Name>
 							<BitSize>32</BitSize>
@@ -115,12 +270,18 @@
 							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
 							<BitOffs>64</BitOffs>
 						</Symbol>
+						<Symbol CreateSymbol="true">
+							<Name>PressDriveInputs</Name>
+							<BitSize>56</BitSize>
+							<BaseType GUID="{484B554E-A552-4431-AC68-AD583306F58F}">DriveInputsStruct</BaseType>
+							<BitOffs>96</BitOffs>
+						</Symbol>
 					</DataArea>
 					<DataArea>
 						<AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
 						<Name>Outputs</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>12</ByteSize>
+						<ByteSize>27</ByteSize>
 						<Symbol>
 							<Name>Value</Name>
 							<BitSize>32</BitSize>
@@ -138,6 +299,12 @@
 							<BitSize>32</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
 							<BitOffs>64</BitOffs>
+						</Symbol>
+						<Symbol CreateSymbol="true">
+							<Name>PressDriveOutputs</Name>
+							<BitSize>120</BitSize>
+							<BaseType GUID="{AF45A628-633B-4BB9-B395-1EA508E2E9F4}">DriveOutputsStruct</BaseType>
+							<BitOffs>96</BitOffs>
 						</Symbol>
 					</DataArea>
 					<DataArea>
@@ -162,6 +329,36 @@
 							<BitSize>32</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
 							<BitOffs>48</BitOffs>
+						</Symbol>
+					</DataArea>
+					<DataArea>
+						<AreaNo AreaType="Standard" CreateSymbols="true">4</AreaNo>
+						<Name>PressDriveVariables</Name>
+						<ContextId>1</ContextId>
+						<ByteSize>22</ByteSize>
+						<Symbol CreateSymbol="true">
+							<Name>DriveCommands</Name>
+							<BitSize>128</BitSize>
+							<BaseType GUID="{DE9E8508-0D64-4C28-90CB-FED16972CF38}">DriveCommandsStruct</BaseType>
+							<BitOffs>0</BitOffs>
+						</Symbol>
+						<Symbol CreateSymbol="true">
+							<Name>MotionCommands</Name>
+							<BitSize>16</BitSize>
+							<BaseType GUID="{C5D1F7B8-E309-4699-9630-8D5ADBEFEB73}">MotionCommandsStruct</BaseType>
+							<BitOffs>128</BitOffs>
+						</Symbol>
+						<Symbol CreateSymbol="true">
+							<Name>DriveStatus</Name>
+							<BitSize>16</BitSize>
+							<BaseType GUID="{C08809EA-7BAB-42E0-81CF-5748C4E9663B}">DriveStatusEnum</BaseType>
+							<BitOffs>144</BitOffs>
+						</Symbol>
+						<Symbol CreateSymbol="true">
+							<Name>VelocityInRPM</Name>
+							<BitSize>16</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+							<BitOffs>160</BitOffs>
 						</Symbol>
 					</DataArea>
 				</DataAreas>
