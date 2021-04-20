@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.10" ClassName="CNestedCppProjDef">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.12" ClassName="CNestedCppProjDef">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{484B554E-A552-4431-AC68-AD583306F58F}">DriveInputsStruct</Name>
@@ -85,25 +85,6 @@
 				<Hide GUID="{0B70E8D3-03A4-4898-928E-32EDEB2E6CAA}"/>
 				<Hide GUID="{B527CA2F-4588-4A2B-99FC-4F15ECD4BA22}"/>
 				<Hide GUID="{B4B6AE81-B03B-4622-AFEC-6004915B7F6F}"/>
-			</Hides>
-		</DataType>
-		<DataType>
-			<Name GUID="{C5D1F7B8-E309-4699-9630-8D5ADBEFEB73}">MotionCommandsStruct</Name>
-			<BitSize>16</BitSize>
-			<SubItem>
-				<Name>Start</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
-				<BitSize>8</BitSize>
-				<BitOffs>0</BitOffs>
-			</SubItem>
-			<SubItem>
-				<Name>Stop</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
-				<BitSize>8</BitSize>
-				<BitOffs>8</BitOffs>
-			</SubItem>
-			<Hides>
-				<Hide GUID="{4168BC5D-C857-46F6-8281-D8CBDA49C308}"/>
 			</Hides>
 		</DataType>
 		<DataType>
@@ -335,7 +316,7 @@
 						<AreaNo AreaType="Standard" CreateSymbols="true">4</AreaNo>
 						<Name>PressDriveVariables</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>22</ByteSize>
+						<ByteSize>21</ByteSize>
 						<Symbol CreateSymbol="true">
 							<Name>DriveCommands</Name>
 							<BitSize>128</BitSize>
@@ -343,21 +324,21 @@
 							<BitOffs>0</BitOffs>
 						</Symbol>
 						<Symbol CreateSymbol="true">
-							<Name>MotionCommands</Name>
-							<BitSize>16</BitSize>
-							<BaseType GUID="{C5D1F7B8-E309-4699-9630-8D5ADBEFEB73}">MotionCommandsStruct</BaseType>
-							<BitOffs>128</BitOffs>
-						</Symbol>
-						<Symbol CreateSymbol="true">
 							<Name>DriveStatus</Name>
 							<BitSize>16</BitSize>
 							<BaseType GUID="{C08809EA-7BAB-42E0-81CF-5748C4E9663B}">DriveStatusEnum</BaseType>
-							<BitOffs>144</BitOffs>
+							<BitOffs>128</BitOffs>
 						</Symbol>
 						<Symbol CreateSymbol="true">
 							<Name>VelocityInRPM</Name>
 							<BitSize>16</BitSize>
 							<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+							<BitOffs>144</BitOffs>
+						</Symbol>
+						<Symbol CreateSymbol="true">
+							<Name>IsRunning</Name>
+							<BitSize>8</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
 							<BitOffs>160</BitOffs>
 						</Symbol>
 					</DataArea>

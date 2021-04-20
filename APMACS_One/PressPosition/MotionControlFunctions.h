@@ -3,7 +3,7 @@
 class MotionControlFunctions
 {
 public:
-	MotionControlFunctions(DriveInputsStruct& inputs, DriveOutputsStruct& outputs, DriveCommandsStruct& driveCommands, MotionCommandsStruct& motionCommands, SHORT& velocityInRPM, ULONG encoderResolution);
+	MotionControlFunctions::MotionControlFunctions(DriveInputsStruct* inputs, DriveOutputsStruct* outputs, DriveCommandsStruct* driveCommands, bool* isRunning, SHORT* velocityInRPM, ULONG encoderResolution);
 	~MotionControlFunctions();
 	void ProcessDriveCommands();
 	void ProcessMotionCommands();
@@ -12,12 +12,11 @@ public:
 	void DisableDrive();
 	void ResetDrive();
 
-	DriveInputsStruct Inputs;
-	DriveOutputsStruct Outputs;
-	DriveCommandsStruct DriveCommands;
-	MotionCommandsStruct MotionCommands;
+	DriveInputsStruct* Inputs;
+	DriveOutputsStruct* Outputs;
+	DriveCommandsStruct* DriveCommands;
+	bool* IsRunning;
 	DriveStatusEnum DriveStatus = DriveStatusEnum::UnknownState;
-	SHORT VelocityInRPM;
+	SHORT* VelocityInRPM;
 	ULONG EncoderResolution;
-
 };
