@@ -96,7 +96,7 @@
           <Symbol>
             <Name>Data</Name>
             <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-          </Symbol>
+          </Symbol><Symbol><Name>PositionBit</Name><BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType></Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
@@ -113,8 +113,8 @@
           <Symbol>
             <Name>Data</Name>
             <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-          </Symbol>
-        </DataArea><DataArea><AreaNo AreaType="Standard">3</AreaNo><Name>Debug</Name><ContextId>1</ContextId><Symbol CreateSymbol="true"><Name>DelayUsec</Name><BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType></Symbol><Symbol><Name>MaxWaitUsec</Name><BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType></Symbol><Symbol><Name>NumSyncModule</Name><BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType></Symbol><Symbol><Name>SyncFlag0</Name><BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType></Symbol><Symbol><Name>SyncFlag1</Name><BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType></Symbol><Symbol><Name>SyncFlag2</Name><BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType></Symbol></DataArea>
+          </Symbol><Symbol><Name>ModPositionBit</Name><BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType></Symbol>
+        </DataArea><DataArea><AreaNo AreaType="Standard">3</AreaNo><Name>Debug</Name><ContextId>1</ContextId><Symbol CreateSymbol="true"><Name>DelayUsec</Name><BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType></Symbol><Symbol><Name>MaxWaitUsec</Name><BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType></Symbol><Symbol><Name>NumSyncModule</Name><BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType></Symbol><Symbol><Name>SyncFlag0</Name><BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType></Symbol><Symbol><Name>SyncFlag1</Name><BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType></Symbol><Symbol><Name>SyncFlag2</Name><BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType></Symbol><Symbol><Name>CurPentTime</Name><BaseType GUID="{18071995-0000-0000-0000-00000000000c}">LINT</BaseType></Symbol><Symbol><Name>TimeDiff</Name><BaseType GUID="{18071995-0000-0000-0000-00000000000c}">LINT</BaseType></Symbol><Symbol><Name>TimeDiffLimit</Name><BaseType GUID="{18071995-0000-0000-0000-00000000000c}">LINT</BaseType></Symbol><Symbol><Name>GoodCount</Name><BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType></Symbol><Symbol><Name>BadCount</Name><BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType></Symbol></DataArea>
       </DataAreas>
       <InterfacePointers>
         <InterfacePointer>
@@ -123,12 +123,12 @@
           <Type GUID="{0300001e-0000-0000-e000-000000000064}">ITcCyclicCaller</Type>
         </InterfacePointer><InterfacePointer><PTCID>#x00000004</PTCID><Name>RTime</Name><Type GUID="{02000010-0000-0000-e000-000000000064}">ITcRTime</Type><ContextId>1</ContextId></InterfacePointer><InterfacePointer><PTCID>#x00000010</PTCID><Name>PostCyclicCaller</Name><Type GUID="{03000026-0000-0000-e000-000000000064}">ITcPostCyclicCaller</Type><ContextId>1</ContextId></InterfacePointer>
       </InterfacePointers>
-      <DataPointers />
+      <DataPointers ><DataPointer><PTCID>#x00000005</PTCID><Name>CurPentTimePtr</Name><Type GUID="{18071995-0000-0000-0000-00000000000c}">LINT</Type><ContextId>1</ContextId></DataPointer></DataPointers>
       <Deployment />
     </Module>
   </Modules>
   <Library>
     <Name>IOSync</Name>
-    <Version>0.3.0.1</Version>
+    <Version>0.4.0.1</Version>
   </Library>
 </TcModuleClass>

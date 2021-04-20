@@ -96,7 +96,7 @@
           <Symbol>
             <Name>Data</Name>
             <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-          </Symbol><Symbol><Name>TestInputBit0</Name><BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType></Symbol>
+          </Symbol><Symbol><Name>TestInputBit0</Name><BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType></Symbol><Symbol><Name>ModPosBitMapped</Name><BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType></Symbol><Symbol><Name>ModPosBitStart</Name><BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType></Symbol><Symbol><Name>ModPosBitEnd</Name><BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType></Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
@@ -123,12 +123,12 @@
           <Type GUID="{0300001e-0000-0000-e000-000000000064}">ITcCyclicCaller</Type>
         </InterfacePointer><InterfacePointer><PTCID>#x00000004</PTCID><Name>PostCyclicCaller</Name><Type GUID="{03000026-0000-0000-e000-000000000064}">ITcPostCyclicCaller</Type><ContextId>1</ContextId></InterfacePointer><InterfacePointer><PTCID>#x00000006</PTCID><Name>IOSyncIntrf1</Name><Type GUID="{7ebe6026-0379-47c3-97b9-ec238f447164}">IIOSyncInterface</Type><ContextId>1</ContextId></InterfacePointer>
       </InterfacePointers>
-      <DataPointers />
+      <DataPointers ><DataPointer><PTCID>#x00000007</PTCID><Name>ModPosBitPtr</Name><Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type><ContextId>1</ContextId></DataPointer></DataPointers>
       <Deployment />
     </Module>
   </Modules>
   <Library>
     <Name>RollFeed</Name>
-    <Version>0.3.0.1</Version>
+    <Version>0.4.0.1</Version>
   </Library>
 </TcModuleClass>

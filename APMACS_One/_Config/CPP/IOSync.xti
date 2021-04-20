@@ -119,7 +119,7 @@
 		</DataType>
 	</DataTypes>
 	<Project GUID="{CE61030E-EC12-4308-B464-3862EDD83166}" Name="IOSync" PrjFilePath="..\..\IOSync\IOSync.vcxproj" TmcFilePath="..\..\IOSync\IOSync.tmc">
-		<Instance Id="#x01010010" KeepUnrestoredLinks="1" ClassFactoryId="C++ Module Vendor|IOSync|0.3.0.1">
+		<Instance Id="#x01010010" KeepUnrestoredLinks="1" ClassFactoryId="C++ Module Vendor|IOSync|0.4.0.1">
 			<Name>IOSync_1</Name>
 			<TmcDesc GUID="{9DB963CA-876D-44A3-8341-41D1DBE289F2}">
 				<Name>IOSyncModule</Name>
@@ -217,7 +217,7 @@
 						<AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
 						<Name>Inputs</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>12</ByteSize>
+						<ByteSize>16</ByteSize>
 						<Symbol>
 							<Name>Value</Name>
 							<BitSize>32</BitSize>
@@ -236,12 +236,18 @@
 							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
 							<BitOffs>64</BitOffs>
 						</Symbol>
+						<Symbol>
+							<Name>PositionBit</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>96</BitOffs>
+						</Symbol>
 					</DataArea>
 					<DataArea>
 						<AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
 						<Name>Outputs</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>12</ByteSize>
+						<ByteSize>16</ByteSize>
 						<Symbol>
 							<Name>Value</Name>
 							<BitSize>32</BitSize>
@@ -260,12 +266,18 @@
 							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
 							<BitOffs>64</BitOffs>
 						</Symbol>
+						<Symbol>
+							<Name>ModPositionBit</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>96</BitOffs>
+						</Symbol>
 					</DataArea>
 					<DataArea>
 						<AreaNo AreaType="Standard">3</AreaNo>
 						<Name>Debug</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>9</ByteSize>
+						<ByteSize>41</ByteSize>
 						<Symbol CreateSymbol="true">
 							<Name>DelayUsec</Name>
 							<BitSize>16</BitSize>
@@ -302,6 +314,36 @@
 							<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
 							<BitOffs>64</BitOffs>
 						</Symbol>
+						<Symbol>
+							<Name>CurPentTime</Name>
+							<BitSize>64</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-00000000000C}">LINT</BaseType>
+							<BitOffs>72</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>TimeDiff</Name>
+							<BitSize>64</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-00000000000C}">LINT</BaseType>
+							<BitOffs>136</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>TimeDiffLimit</Name>
+							<BitSize>64</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-00000000000C}">LINT</BaseType>
+							<BitOffs>200</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>GoodCount</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>264</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>BadCount</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>296</BitOffs>
+						</Symbol>
 					</DataArea>
 				</DataAreas>
 				<InterfacePointers>
@@ -323,10 +365,18 @@
 						<ContextId>1</ContextId>
 					</InterfacePointer>
 				</InterfacePointers>
+				<DataPointers>
+					<DataPointer>
+						<PTCID>#x00000005</PTCID>
+						<Name>CurPentTimePtr</Name>
+						<Type>LINT</Type>
+						<ContextId>1</ContextId>
+					</DataPointer>
+				</DataPointers>
 				<ParameterValues>
 					<Value>
 						<Name>TraceLevelMax</Name>
-						<EnumText>tlAlways</EnumText>
+						<EnumText>tlInfo</EnumText>
 					</Value>
 					<Value>
 						<Name>DefaultAdsPort</Name>
@@ -365,7 +415,7 @@
 				</InterfacePointerValues>
 			</TmcDesc>
 		</Instance>
-		<Instance Id="#x01010050" KeepUnrestoredLinks="2" ClassFactoryId="C++ Module Vendor|IOSync|0.3.0.1">
+		<Instance Id="#x01010050" KeepUnrestoredLinks="2" ClassFactoryId="C++ Module Vendor|IOSync|0.4.0.1">
 			<Name>IOSync_2</Name>
 			<TmcDesc GUID="{9DB963CA-876D-44A3-8341-41D1DBE289F2}">
 				<Name>IOSyncModule</Name>
@@ -463,7 +513,7 @@
 						<AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
 						<Name>Inputs</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>12</ByteSize>
+						<ByteSize>16</ByteSize>
 						<Symbol>
 							<Name>Value</Name>
 							<BitSize>32</BitSize>
@@ -482,12 +532,18 @@
 							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
 							<BitOffs>64</BitOffs>
 						</Symbol>
+						<Symbol>
+							<Name>PositionBit</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>96</BitOffs>
+						</Symbol>
 					</DataArea>
 					<DataArea>
 						<AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
 						<Name>Outputs</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>12</ByteSize>
+						<ByteSize>16</ByteSize>
 						<Symbol>
 							<Name>Value</Name>
 							<BitSize>32</BitSize>
@@ -506,12 +562,18 @@
 							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
 							<BitOffs>64</BitOffs>
 						</Symbol>
+						<Symbol>
+							<Name>ModPositionBit</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>96</BitOffs>
+						</Symbol>
 					</DataArea>
 					<DataArea>
 						<AreaNo AreaType="Standard">3</AreaNo>
 						<Name>Debug</Name>
 						<ContextId>1</ContextId>
-						<ByteSize>9</ByteSize>
+						<ByteSize>41</ByteSize>
 						<Symbol CreateSymbol="true">
 							<Name>DelayUsec</Name>
 							<BitSize>16</BitSize>
@@ -548,6 +610,36 @@
 							<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
 							<BitOffs>64</BitOffs>
 						</Symbol>
+						<Symbol>
+							<Name>CurPentTime</Name>
+							<BitSize>64</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-00000000000C}">LINT</BaseType>
+							<BitOffs>72</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>TimeDiff</Name>
+							<BitSize>64</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-00000000000C}">LINT</BaseType>
+							<BitOffs>136</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>TimeDiffLimit</Name>
+							<BitSize>64</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-00000000000C}">LINT</BaseType>
+							<BitOffs>200</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>GoodCount</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>264</BitOffs>
+						</Symbol>
+						<Symbol>
+							<Name>BadCount</Name>
+							<BitSize>32</BitSize>
+							<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+							<BitOffs>296</BitOffs>
+						</Symbol>
 					</DataArea>
 				</DataAreas>
 				<InterfacePointers>
@@ -569,6 +661,14 @@
 						<ContextId>1</ContextId>
 					</InterfacePointer>
 				</InterfacePointers>
+				<DataPointers>
+					<DataPointer>
+						<PTCID>#x00000005</PTCID>
+						<Name>CurPentTimePtr</Name>
+						<Type>LINT</Type>
+						<ContextId>1</ContextId>
+					</DataPointer>
+				</DataPointers>
 				<ParameterValues>
 					<Value>
 						<Name>TraceLevelMax</Name>
@@ -609,7 +709,27 @@
 						<OTCID>#x02010050</OTCID>
 					</Value>
 				</InterfacePointerValues>
+				<DataPointerValues>
+					<Value>
+						<Name>CurPentTimePtr</Name>
+						<OTCID>#x01010010</OTCID>
+						<AreaNo>3</AreaNo>
+						<ByteOffs>9</ByteOffs>
+						<ByteSize>8</ByteSize>
+					</Value>
+				</DataPointerValues>
 			</TmcDesc>
 		</Instance>
 	</Project>
+	<Mappings>
+		<OwnerA Name="IOSync_1">
+			<OwnerB Name="TIXC^IOSync^IOSync_2">
+				<Link VarA="Debug^CurPentTime" VarB="Data Pointer^CurPentTimePtr"/>
+				<Link VarA="TIXC^IOSync^IOSync_2^Data Pointer^CurPentTimePtr" VarB="TIXC^IOSync^IOSync_1^Debug^CurPentTime"/>
+			</OwnerB>
+			<OwnerB Name="TIXC^RollFeed^RollFeed_A">
+				<Link VarA="Outputs^ModPositionBit" VarB="Data Pointer^ModPosBitPtr"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
 </TcSmItem>

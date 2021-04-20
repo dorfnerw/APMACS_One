@@ -9,12 +9,14 @@
 	<Project ProjectGUID="{0FE34207-1F20-40B7-AA99-2E8F2411CC32}" TargetNetId="169.254.214.231.1.1" Target64Bit="true" ShowHideConfigurations="#x106">
 		<System>
 			<Settings MaxCpus="4" NonWinCpus="3">
+				<Cpu BaseTime="1250"/>
 				<Cpu CpuId="1" BaseTime="1250"/>
 				<Cpu CpuId="2" BaseTime="1250"/>
 				<Cpu CpuId="3" BaseTime="1250"/>
+				<IoIdleTask Affinity="#x00000002"/>
 			</Settings>
 			<Tasks>
-				<Task Id="2" Priority="1" CycleTime="1250" AmsPort="350" AdtTasks="true">
+				<Task Id="2" Priority="1" CycleTime="1250" AmsPort="350" Affinity="#x00000002" AdtTasks="true">
 					<Name>IO Sync Task 1</Name>
 				</Task>
 				<Task Id="3" Priority="2" CycleTime="1250" AmsPort="351" Affinity="#x00000004" AdtTasks="true">
@@ -40,8 +42,11 @@
 						<Name>Image</Name>
 					</Image>
 				</Task>
-				<Task Id="5" Priority="4" CycleTime="2500" AmsPort="352" AdtTasks="true">
+				<Task Id="5" Priority="4" CycleTime="2500" AmsPort="352" Affinity="#x00000002" AdtTasks="true">
 					<Name>IO Sync Task 2</Name>
+				</Task>
+				<Task Id="6" Priority="5" CycleTime="2500" AmsPort="353" AdtTasks="true">
+					<Name>Core 0 Task</Name>
 				</Task>
 			</Tasks>
 		</System>
@@ -478,4 +483,12 @@
 			</Device>
 		</Io>
 	</Project>
+	<Mappings>
+		<MappingInfo Identifier="{00000000-0030-0304-1000-010130000403}" Id="#x02030010"/>
+		<OwnerA Name="TIID^Device 3 (EtherCAT)">
+			<OwnerB Name="TIXC^IOSync^IOSync_1">
+				<Link VarA="Box 6 (Nidec Avtron EtherCAT)^Encoder^Position Value" VarB="Inputs^PositionBit"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
 </TcSmProject>

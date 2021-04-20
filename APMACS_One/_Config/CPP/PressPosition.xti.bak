@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.10" ClassName="CNestedCppProjDef">
-	<Project GUID="{72895D6A-A828-46EA-9F1A-42918936E7AA}" Name="PressPosition" PrjFilePath="PressPosition\PressPosition.vcxproj" TmcFilePath="PressPosition\PressPosition.tmc">
+	<Project GUID="{72895D6A-A828-46EA-9F1A-42918936E7AA}" Name="PressPosition" PrjFilePath="..\..\PressPosition\PressPosition.vcxproj" TmcFilePath="..\..\PressPosition\PressPosition.tmc">
 		<Instance Id="#x01010070" KeepUnrestoredLinks="2" ClassFactoryId="C++ Module Vendor|PressPosition|0.3.0.1">
 			<Name>PressPositionMod</Name>
 			<TmcDesc GUID="{94BC1091-676B-4998-A5B7-96976654CC00}">

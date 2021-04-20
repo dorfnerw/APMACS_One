@@ -399,6 +399,7 @@ HRESULT CPressPosModule::PostCyclicUpdate(ITcTask* ipTask, ITcUnknown* ipCaller,
 
 		//-- This is Logic execution -----
 		m_log.LogStart(2, 2);
+
 		DelayUsec(m_Debug.ExeTimeUsec);							//-- 30 usec 
 
 		////-- This test is for Feed A only
@@ -426,7 +427,7 @@ HRESULT CPressPosModule::PostCyclicUpdate(ITcTask* ipTask, ITcUnknown* ipCaller,
 		if (IsAddedToIOSync()) m_spIOSyncIntrf1->SetOutputReadyFlag(syncId);
 
 
-		//ResetInputReadyFlag();			//-- reset input flag for this cycle
+		if (IsAddedToIOSync()) m_spIOSyncIntrf1->ResetInputReadyFlag(syncId);			//-- reset input flag for this cycle
 	}
 	else
 	{
